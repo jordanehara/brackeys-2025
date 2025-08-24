@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
     void DisplayLoseText()
     {
         Debug.Log("Player lose");
+        SceneChanger.instance.ReloadScene();
     }
 
     public void AppendMove(string move)

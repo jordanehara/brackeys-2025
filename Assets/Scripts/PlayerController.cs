@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         }
 
         MoveToNewTile();
+        CheckPlayerOutOfBounds();
     }
 
     public virtual void GetNewPosition()
@@ -59,6 +60,14 @@ public class PlayerController : MonoBehaviour
     protected void MoveToNewTile()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+    }
+
+    protected void CheckPlayerOutOfBounds()
+    {
+        if (currentGridCell == -1) // fell off the grid
+        {
+            SceneChanger.instance.ReloadScene();
+        }
     }
 
     #region Player Direction
@@ -105,7 +114,6 @@ public class PlayerController : MonoBehaviour
             }
             movePoint.position += new Vector3(0, -tileSize, 0);
         }
-        // player lose. Fell off the map
     }
 
     protected void Platform()
