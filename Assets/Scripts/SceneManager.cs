@@ -32,4 +32,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene($"{gameSceneName}_{level}");
     }
+
+    public void ReloadScene()
+    {
+        EventsManager.instance.onResetLevel.Invoke();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

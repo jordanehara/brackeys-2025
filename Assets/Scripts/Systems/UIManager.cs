@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,12 +19,14 @@ public class UIManager : MonoBehaviour
     {
         EventsManager.instance.onPlayerWin.AddListener(DisplayWinText);
         EventsManager.instance.onPlayerLose.AddListener(DisplayLoseText);
+        EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
     void OnDestroy()
     {
         EventsManager.instance.onPlayerWin.RemoveListener(DisplayWinText);
         EventsManager.instance.onPlayerLose.RemoveListener(DisplayLoseText);
+        EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
     void DisplayWinText()
@@ -44,5 +47,11 @@ public class UIManager : MonoBehaviour
     public void DisplayMovesLeft(int numMoves)
     {
         movesLeft.text += numMoves.ToString();
+    }
+
+    public void ResetText()
+    {
+        movesLeft.text = "Moves Left: ";
+        movesList.text = "";
     }
 }

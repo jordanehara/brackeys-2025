@@ -4,6 +4,7 @@ public class GoalTile : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        EventsManager.instance.onPlayerWin.Invoke();
+        if (collision.gameObject.name == "Player")
+            EventsManager.instance.onPlayerWin.Invoke();
     }
 }
