@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 2e4305b22968eb84da00795fc7dfb0f2
+guid: 435923289727e7d40a41dc8665562e07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9194496631076630141
-    second: biscuit_idle_0
+      213: 7851540589514694680
+    second: biscuit_idle 1_0
   - first:
-      213: 756456704156216981
-    second: biscuit_idle_1
+      213: 4114070600053951219
+    second: biscuit_idle 1_1
   - first:
-      213: 352515326012632019
-    second: biscuit_idle_2
+      213: -6178423582438058377
+    second: biscuit_idle 1_2
   - first:
-      213: -7313817440137429631
-    second: biscuit_idle_3
+      213: 5514150891182023584
+    second: biscuit_idle 1_3
   - first:
-      213: -6462709494928606884
-    second: biscuit_idle_4
+      213: -8170306559960990638
+    second: biscuit_idle 1_4
+  - first:
+      213: 1974481955640068233
+    second: biscuit_idle 1_5
+  - first:
+      213: -4823681697275780543
+    second: biscuit_idle 1_6
+  - first:
+      213: -4517443976343831245
+    second: biscuit_idle 1_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,10 +93,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,19 +138,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 0
         width: 16
-        height: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 381d6205706966080800000000000000
-      internalID: -9194496631076630141
+      spriteID: 4f2c3ef7994ebbf4eb0fc21b8d155f0c
+      internalID: 69017571
       vertices: []
       indices: 
       edges: []
@@ -150,9 +159,9 @@ TextureImporter:
       name: biscuit_idle_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 16
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,10 +169,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59ea1335d597f7a00800000000000000
-      internalID: 756456704156216981
+      spriteID: 3d94fe53508e473489da7a6508faecf5
+      internalID: 1870645354
       vertices: []
       indices: 
       edges: []
@@ -172,20 +181,20 @@ TextureImporter:
       name: biscuit_idle_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
-        width: 13
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3db2dd042d264e400800000000000000
-      internalID: 352515326012632019
+      spriteID: a2a30ee2fa20210469582bfb1a500587
+      internalID: 2096991762
       vertices: []
       indices: 
       edges: []
@@ -194,9 +203,9 @@ TextureImporter:
       name: biscuit_idle_3
       rect:
         serializedVersion: 2
-        x: 51
+        x: 48
         y: 0
-        width: 9
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,10 +213,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 18d3d88d9c9108a90800000000000000
-      internalID: -7313817440137429631
+      spriteID: 05bf26df6e93f544e973fb7ce0408601
+      internalID: 60751726
       vertices: []
       indices: 
       edges: []
@@ -216,9 +225,9 @@ TextureImporter:
       name: biscuit_idle_4
       rect:
         serializedVersion: 2
-        x: 68
+        x: 64
         y: 0
-        width: 8
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,10 +235,76 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c597c3c84f7df46a0800000000000000
-      internalID: -6462709494928606884
+      spriteID: ec1ddc4ad0d7e0642997f96f7fd82703
+      internalID: 1791763006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biscuit_idle_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a97260186694445a41a6b2ad73a045
+      internalID: -364016423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biscuit_idle_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe44fb0bf71bbe4593a48b0cd822970
+      internalID: 1365860223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biscuit_idle_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2e2e701257ddc4b859768f426c8fac
+      internalID: 1595607712
       vertices: []
       indices: 
       edges: []
@@ -238,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4a68ce57055864545a57b40a4d13f75e
     internalID: 0
     vertices: []
     indices: 
@@ -246,13 +321,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      biscuit_idle_0: -9194496631076630141
-      biscuit_idle_1: 756456704156216981
-      biscuit_idle_2: 352515326012632019
-      biscuit_idle_3: -7313817440137429631
-      biscuit_idle_4: -6462709494928606884
+      biscuit_idle_0: 69017571
+      biscuit_idle_1: 1870645354
+      biscuit_idle_2: 2096991762
+      biscuit_idle_3: 60751726
+      biscuit_idle_4: 1791763006
+      biscuit_idle_5: -364016423
+      biscuit_idle_6: 1365860223
+      biscuit_idle_7: 1595607712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
