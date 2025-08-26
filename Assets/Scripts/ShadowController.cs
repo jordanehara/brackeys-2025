@@ -22,6 +22,8 @@ public class ShadowController : PlayerController
 
     protected override void Update()
     {
+        if (inDialog) return;
+
         currentGridCell = grid.GetValue(transform.position);
 
         moveShadow = GameManager.instance.playerMoving;

@@ -461,53 +461,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &585692862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 585692863}
-  - component: {fileID: 585692864}
-  m_Layer: 0
-  m_Name: Level Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &585692863
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585692862}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01123, y: 2.45956, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &585692864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585692862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f251097e42186e478900c92d18d3230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numShadowMoves: 6
-  shadows:
-  - {fileID: 843804514}
 --- !u!1001 &593391042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1517,6 +1470,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6949730326089282682, guid: dba63c1b2ef57134b80a94c96d45e969, type: 3}
   m_PrefabInstance: {fileID: 1658977872}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1823608725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356509532047612846, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: shadows.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: 'shadows.Array.data[0]'
+      value: 
+      objectReference: {fileID: 843804514}
+    - target: {fileID: 8984573051346364261, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: m_Name
+      value: Level Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
 --- !u!1001 &1863883791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,8 +1678,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1823608725}
   - {fileID: 1243679836}
   - {fileID: 594239022}
   - {fileID: 981164184}
   - {fileID: 1020340564}
-  - {fileID: 585692863}

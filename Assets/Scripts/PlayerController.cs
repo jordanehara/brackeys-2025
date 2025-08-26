@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private float moveSpeed = 15f;
     private float tileSize = 2f;
+    protected bool inDialog = false;
     protected int currentGridCell;
     protected Grid grid;
 
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (inDialog) return;
+
         currentGridCell = grid.GetValue(transform.position);
         GameManager.instance.playerMoving = IsMovementInput();
 

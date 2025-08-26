@@ -10,6 +10,8 @@ public class EventsManager : MonoBehaviour
     public UnityEvent onPlayerLose; // fall off platforms/run into shadow
     public UnityEvent onPlayerTeleport;
     public UnityEvent onResetLevel;
+    public UnityEvent onDialogEnded;
+    public UnityEvent onDialogStarted;
 
     void Awake()
     {

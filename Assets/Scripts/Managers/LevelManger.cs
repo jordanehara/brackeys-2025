@@ -7,6 +7,9 @@ public class LevelManger : MonoBehaviour
 
     [SerializeField] int numShadowMoves = 1;
     [SerializeField] List<GameObject> shadows = new List<GameObject>();
+    [SerializeField] protected List<DialogData> levelEnterDialog = new List<DialogData>();
+    [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
+    [SerializeField] protected List<DialogData> levelEndDialog = new List<DialogData>();
 
     private List<string> shadowMoves = new List<string>();
 
@@ -46,5 +49,9 @@ public class LevelManger : MonoBehaviour
             UIManager.instance.AppendMove(move);
         }
     }
+    #endregion
+
+    #region Dialog triggers
+
     #endregion
 }
