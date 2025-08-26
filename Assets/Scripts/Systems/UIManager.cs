@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject playerWinText;
     [SerializeField] TextMeshProUGUI movesList;
     [SerializeField] TextMeshProUGUI movesLeft;
+    [SerializeField] TextMeshProUGUI biscuitsTracker;
 
     void Awake()
     {
@@ -17,24 +18,26 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        EventsManager.instance.onPlayerWin.AddListener(DisplayWinText);
-        EventsManager.instance.onPlayerLose.AddListener(DisplayLoseText);
+        DisplayBiscuitCount();
+        EventsManager.instance.onPlayerWin.AddListener(PlayerWin);
+        EventsManager.instance.onPlayerLose.AddListener(PlayerLose);
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
     void OnDestroy()
     {
-        EventsManager.instance.onPlayerWin.RemoveListener(DisplayWinText);
-        EventsManager.instance.onPlayerLose.RemoveListener(DisplayLoseText);
+        EventsManager.instance.onPlayerWin.RemoveListener(PlayerWin);
+        EventsManager.instance.onPlayerLose.RemoveListener(PlayerLose);
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
-    void DisplayWinText()
+    void PlayerWin()
     {
         playerWinText.SetActive(true);
+        GameManager.instance.biscuitsCollected++;
     }
 
-    void DisplayLoseText()
+    void PlayerLose()
     {
         Debug.Log("Player lose");
         SceneChanger.instance.ReloadScene();
@@ -54,5 +57,16 @@ public class UIManager : MonoBehaviour
     {
         movesLeft.text = "Moves Left: ";
         movesList.text = "";
+        DisplayBiscuitCount();
+    }
+
+    public void DisplayBiscuitCount()
+    {
+        biscuitsTracker.text = $"Biscuits Found: {GameManager.instance.biscuitsCollected}/3";
+    }
+
+    public void IncreaseBiscuitCount()
+    {
+        biscuitsTracker.text = $"Biscuits Found: {GameManager.instance.biscuitsCollected + 1}/3";
     }
 }
