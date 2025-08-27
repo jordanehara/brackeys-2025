@@ -65,7 +65,7 @@ public class LevelManger : MonoBehaviour
     {
         if (levelEndDialog.Count > 0)
         {
-            DialogManager.instance.TriggerDialog(levelEnterDialog);
+            StartCoroutine(DialogManager.instance.TriggerDialog(levelEnterDialog));
         }
     }
 
@@ -73,7 +73,7 @@ public class LevelManger : MonoBehaviour
     {
         if (shadowEnterDialog.Count > 0)
         {
-            DialogManager.instance.TriggerDialog(shadowEnterDialog);
+            StartCoroutine(DialogManager.instance.TriggerDialog(shadowEnterDialog));
         }
     }
 
@@ -81,7 +81,7 @@ public class LevelManger : MonoBehaviour
     {
         if (levelEndDialog.Count > 0)
         {
-            DialogManager.instance.TriggerDialog(levelEndDialog);
+            StartCoroutine(DialogManager.instance.TriggerDialog(levelEndDialog));
         }
     }
     #endregion

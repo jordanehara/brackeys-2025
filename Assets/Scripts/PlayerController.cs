@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     protected int currentGridCell;
     protected Grid grid;
     protected bool firstMoveCompleted = false;
-    protected bool alive = true;
+    protected bool playerAlive = true;
     protected bool move;
 
     protected void Awake()
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (!alive) return;
+        if (!playerAlive) return;
 
         currentGridCell = grid.GetValue(transform.position);
 
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerDeath()
     {
-        alive = false;
+        playerAlive = false;
         GetAnimator().TriggerDeath();
     }
 

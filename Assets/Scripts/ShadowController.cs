@@ -17,7 +17,7 @@ public class ShadowController : PlayerController
 
     protected override void Update()
     {
-        if (!alive) return;
+        if (!playerAlive) return;
         if (inDialog) return;
 
         currentGridCell = grid.GetValue(transform.position);
@@ -72,7 +72,7 @@ public class ShadowController : PlayerController
         if (collision.gameObject.name == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            alive = false;
+            playerAlive = false;
         }
     }
 }

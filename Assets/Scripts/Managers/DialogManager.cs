@@ -79,14 +79,10 @@ public class DialogManager : MonoBehaviour
         EventsManager.instance.onDialogEnded.Invoke();
     }
 
-    public void TriggerDialog(List<DialogData> dialogData)
+    public IEnumerator TriggerDialog(List<DialogData> dialogData)
     {
         EventsManager.instance.onDialogStarted.Invoke();
-        if (dialogData == null)
-        {
-            Debug.LogError("Null dialog data");
-            return;
-        }
+        yield return new WaitForSecondsRealtime(2f);
         dialogBox.SetActive(true);
         dialogProgressionCount = 0;
 
