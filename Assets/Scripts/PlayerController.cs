@@ -7,20 +7,25 @@ public class PlayerController : MonoBehaviour
 
     private float moveSpeed = 15f;
     private float tileSize = 2f;
-    protected bool inDialog = true;
+    protected bool inDialog = false;
     protected int currentGridCell;
     protected Grid grid;
+    protected bool firstMoveCompleted = false;
+    protected bool alive = true;
+
+    protected void Awake()
+    {
+        EventsManager.instance.onDialogStarted.AddListener(StartDialogMode);
+        EventsManager.instance.onDialogEnded.AddListener(EndDialogMode);
+    }
 
     protected virtual void Start()
     {
         grid = gridControl.GetComponent<GridController>().grid;
         movePoint.parent = null;
-
-        EventsManager.instance.onDialogStarted.AddListener(StartDialogMode);
-        EventsManager.instance.onDialogEnded.AddListener(EndDialogMode);
     }
 
-    void OnDestroy()
+    protected void OnDestroy()
     {
         EventsManager.instance.onDialogStarted.RemoveListener(StartDialogMode);
         EventsManager.instance.onDialogEnded.RemoveListener(EndDialogMode);
@@ -28,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (!alive) return;
+
         currentGridCell = grid.GetValue(transform.position);
         GameManager.instance.playerMoving = IsMovementInput();
 
@@ -79,6 +86,17 @@ public class PlayerController : MonoBehaviour
         {
             SceneChanger.instance.ReloadScene();
         }
+    }
+
+    public AnimatorController GetAnimator()
+    {
+        return GetComponent<AnimatorController>();
+    }
+
+    public void TriggerDeath()
+    {
+        alive = false;
+        GetAnimator().TriggerDeath();
     }
 
     #region Player Direction

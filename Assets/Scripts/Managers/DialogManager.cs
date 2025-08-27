@@ -69,8 +69,6 @@ public class DialogManager : MonoBehaviour
             dialogPortrait.sprite = savedDialogData[dialogProgressionCount].portrait;
             dialogNameText.text = savedDialogData[dialogProgressionCount].name;
             typeLine = StartCoroutine(TypeLine());
-            Debug.Log(dialogProgressionCount);
-            Debug.Log(dialogProgressionCount);
         }
     }
 
@@ -134,7 +132,6 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        Debug.Log("coroutine started");
         dialogBodyText.text = "";
         isTyping = true;
         foreach (char letter in savedDialogData[dialogProgressionCount].dialogText)

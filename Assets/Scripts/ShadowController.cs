@@ -3,16 +3,10 @@ using UnityEngine;
 
 public class ShadowController : PlayerController
 {
-    public static ShadowController instance;
     public List<string> moves = new List<string>();
     private string currentMove;
     private int i = 0;
     private bool moveShadow = false;
-
-    void Awake()
-    {
-        if (instance = null) instance = this;
-    }
 
     protected override void Start()
     {
@@ -33,6 +27,7 @@ public class ShadowController : PlayerController
         {
             if (currentGridCell == 0 || moveShadow)
             {
+                if (inDialog) return;
                 GetNewPosition();
             }
         }
@@ -78,7 +73,7 @@ public class ShadowController : PlayerController
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Shadow Hit");
+            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
             EventsManager.instance.onPlayerLose.Invoke();
         }
     }

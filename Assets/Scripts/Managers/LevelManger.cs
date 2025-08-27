@@ -22,10 +22,7 @@ public class LevelManger : MonoBehaviour
     void Start()
     {
         UIManager.instance.DisplayMovesLeft(numShadowMoves);
-        if (levelEndDialog.Count > 0)
-        {
-            DialogManager.instance.TriggerDialog(levelEnterDialog);
-        }
+        StartLevlEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
     }
@@ -65,6 +62,14 @@ public class LevelManger : MonoBehaviour
     #endregion
 
     #region Dialog triggers
+    public void StartLevlEnterDialog()
+    {
+        if (levelEndDialog.Count > 0)
+        {
+            DialogManager.instance.TriggerDialog(levelEnterDialog);
+        }
+    }
+
     public void StartShadowEnterDialog()
     {
         if (shadowEnterDialog.Count > 0)

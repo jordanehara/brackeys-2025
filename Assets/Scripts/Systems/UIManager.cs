@@ -20,14 +20,12 @@ public class UIManager : MonoBehaviour
     {
         DisplayBiscuitCount();
         EventsManager.instance.onPlayerWin.AddListener(PlayerWin);
-        EventsManager.instance.onPlayerLose.AddListener(PlayerLose);
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
     void OnDestroy()
     {
         EventsManager.instance.onPlayerWin.RemoveListener(PlayerWin);
-        EventsManager.instance.onPlayerLose.RemoveListener(PlayerLose);
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
@@ -35,12 +33,6 @@ public class UIManager : MonoBehaviour
     {
         playerWinText.SetActive(true);
         GameManager.instance.biscuitsCollected++;
-    }
-
-    void PlayerLose()
-    {
-        Debug.Log("Player lose");
-        SceneChanger.instance.ReloadScene();
     }
 
     public void AppendMove(string move)
