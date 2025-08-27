@@ -718,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7382107971832941254, guid: 12300a527e5219a4fb9b9ca1c5f028a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52985b1c4512bee4c9fac3a0363f004b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideGrid: 0
+  hideGrid: 1
   levelPieces:
   - {fileID: 1097194026}
   - {fileID: 2114713294}

@@ -12,6 +12,7 @@ public class EventsManager : MonoBehaviour
     public UnityEvent onResetLevel;
     public UnityEvent onDialogEnded;
     public UnityEvent onDialogStarted;
+    public UnityEvent onShadowSpawn;
 
     void Awake()
     {

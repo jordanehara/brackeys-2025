@@ -16,6 +16,7 @@ public class ShadowController : PlayerController
 
     protected override void Start()
     {
+        EventsManager.instance.onShadowSpawn.Invoke();
         base.Start();
         moves = LevelManger.instance.GetShadowMoves();
     }

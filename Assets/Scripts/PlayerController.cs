@@ -28,13 +28,12 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (inDialog) return;
-
         currentGridCell = grid.GetValue(transform.position);
         GameManager.instance.playerMoving = IsMovementInput();
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
         {
+            if (inDialog) return;
             GetNewPosition();
         }
 

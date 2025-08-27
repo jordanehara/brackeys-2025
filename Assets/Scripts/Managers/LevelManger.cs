@@ -26,6 +26,14 @@ public class LevelManger : MonoBehaviour
         {
             DialogManager.instance.TriggerDialog(levelEnterDialog);
         }
+        EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
+        EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
+    }
+
+    void OnDestroy()
+    {
+        EventsManager.instance.onShadowSpawn.RemoveListener(StartShadowEnterDialog);
+        EventsManager.instance.onPlayerWin.RemoveListener(StartLogDialog);
     }
 
     // Update is called once per frame
@@ -57,6 +65,20 @@ public class LevelManger : MonoBehaviour
     #endregion
 
     #region Dialog triggers
+    public void StartShadowEnterDialog()
+    {
+        if (shadowEnterDialog.Count > 0)
+        {
+            DialogManager.instance.TriggerDialog(shadowEnterDialog);
+        }
+    }
 
+    public void StartLogDialog()
+    {
+        if (levelEndDialog.Count > 0)
+        {
+            DialogManager.instance.TriggerDialog(levelEndDialog);
+        }
+    }
     #endregion
 }
