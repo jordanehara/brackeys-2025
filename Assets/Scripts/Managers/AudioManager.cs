@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip menuMusic;
     [SerializeField] AudioClip gameMusic;
     [Space(10)]
-    [SerializeField] AudioClip sceneSwitchSwooshSFX;
+    [SerializeField] AudioClip speakingSFX;
 
     void Awake()
     {
@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region SFX
-    void PlaySoundEffect(AudioClip sfx, float volume = 0)
+    void PlaySoundEffect(AudioClip sfx, float volume = 0, float pitch = 1f)
     {
         if (sfx == null) return;
 
@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
             sfxChannels[currentSFXChannel].Stop();
             sfxChannels[currentSFXChannel].clip = sfx;
             sfxChannels[currentSFXChannel].Play();
+            sfxChannels[currentSFXChannel].pitch = pitch;
             if (volume > 0)
             {
                 sfxChannels[currentSFXChannel].volume = volume;
@@ -71,12 +72,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySceneSwitchSwoosh(float volume = 0)
-    {
-        PlaySoundEffect(sceneSwitchSwooshSFX, volume);
-    }
-
-    public void PlayCustomSFX(AudioClip customSFX, float volume = 0)
+    public void PlayCustomSFX(AudioClip customSFX, float volume = 0, float pitch = 1f)
     {
         PlaySoundEffect(customSFX, volume);
     }
@@ -88,6 +84,11 @@ public class AudioManager : MonoBehaviour
         {
             currentSFXChannel = 0;
         }
+    }
+
+    public void PlaySpeakingSound(float volume = 0, float pitch = 1f)
+    {
+        PlaySoundEffect(speakingSFX, volume, pitch);
     }
     #endregion
 }

@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +12,17 @@ public class DialogManager : MonoBehaviour
     [SerializeField] GameObject dialogBox;
     [SerializeField] TextMeshProUGUI dialogBodyText;
     [SerializeField] TextMeshProUGUI dialogNameText;
+    [SerializeField] Image dialogPortrait;
+    [SerializeField] AudioClip voidSound;
+    [SerializeField] float typingSpeed = 0.01f;
+    [SerializeField] float voicePitch = 1f;
 
     List<DialogData> savedDialogData = new List<DialogData>();
     bool dialogRunning = false;
     bool dialogProgressedThisFrame = false;
     int dialogProgressionCount = 0;
+    bool isTyping;
+    Coroutine typeLine;
 
 
     void Awake()
@@ -58,11 +66,14 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            dialogBodyText.text = savedDialogData[dialogProgressionCount].dialogText;
-
-            dialogProgressionCount++;
+            dialogPortrait.sprite = savedDialogData[dialogProgressionCount].portrait;
+            dialogNameText.text = savedDialogData[dialogProgressionCount].name;
+            typeLine = StartCoroutine(TypeLine());
+            Debug.Log(dialogProgressionCount);
+            Debug.Log(dialogProgressionCount);
         }
     }
+
     void EndDialog()
     {
         dialogRunning = false;
@@ -70,35 +81,69 @@ public class DialogManager : MonoBehaviour
         EventsManager.instance.onDialogEnded.Invoke();
     }
 
-    public void TriggerDialog(string npcName, List<DialogData> dialogData)
+    public void TriggerDialog(List<DialogData> dialogData)
     {
+        EventsManager.instance.onDialogStarted.Invoke();
         if (dialogData == null)
         {
             Debug.LogError("Null dialog data");
             return;
         }
         dialogBox.SetActive(true);
-        dialogNameText.text = npcName;
         dialogProgressionCount = 0;
 
         savedDialogData = dialogData;
         NextDialog();
 
         dialogRunning = true;
-        EventsManager.instance.onDialogStarted.Invoke();
     }
 
     void RunDialog()
     {
         if (ProgressDialogButtonPressed() && !dialogProgressedThisFrame)
         {
-            dialogProgressedThisFrame = true;
-            NextDialog();
+            if (isTyping) // if player is skipping the character by character printing, set the text
+            {
+                StopCoroutine(typeLine);
+                dialogBodyText.text = savedDialogData[dialogProgressionCount].dialogText;
+                isTyping = false;
+            }
+            else
+            {
+                dialogProgressedThisFrame = true;
+                dialogProgressionCount++;
+                NextDialog();
+            }
         }
         else
         {
             dialogProgressedThisFrame = false;
         }
+    }
+
+    float GetVoicePitch()
+    {
+        switch (savedDialogData[dialogProgressionCount].name)
+        {
+            case "Skye":
+                return 1;
+            default:
+                return 1;
+        }
+    }
+
+    IEnumerator TypeLine()
+    {
+        Debug.Log("coroutine started");
+        dialogBodyText.text = "";
+        isTyping = true;
+        foreach (char letter in savedDialogData[dialogProgressionCount].dialogText)
+        {
+            dialogBodyText.text += letter;
+            AudioManager.instance.PlaySpeakingSound(0f, GetVoicePitch());
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        isTyping = false;
     }
     #endregion
 }
@@ -107,6 +152,6 @@ public class DialogManager : MonoBehaviour
 public class DialogData
 {
     public string name = "";
-    public RawImage portrait;
+    public Sprite portrait;
     public string dialogText = "";
 }

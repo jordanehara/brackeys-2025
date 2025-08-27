@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private float moveSpeed = 15f;
     private float tileSize = 2f;
-    protected bool inDialog = false;
+    protected bool inDialog = true;
     protected int currentGridCell;
     protected Grid grid;
 
@@ -15,6 +15,15 @@ public class PlayerController : MonoBehaviour
     {
         grid = gridControl.GetComponent<GridController>().grid;
         movePoint.parent = null;
+
+        EventsManager.instance.onDialogStarted.AddListener(StartDialogMode);
+        EventsManager.instance.onDialogEnded.AddListener(EndDialogMode);
+    }
+
+    void OnDestroy()
+    {
+        EventsManager.instance.onDialogStarted.RemoveListener(StartDialogMode);
+        EventsManager.instance.onDialogEnded.RemoveListener(EndDialogMode);
     }
 
     protected virtual void Update()
@@ -174,6 +183,18 @@ public class PlayerController : MonoBehaviour
         {
             Platform();
         }
+    }
+    #endregion
+
+    #region  Dialog Listeners
+    public void StartDialogMode()
+    {
+        inDialog = true;
+    }
+
+    public void EndDialogMode()
+    {
+        inDialog = false;
     }
     #endregion
 }

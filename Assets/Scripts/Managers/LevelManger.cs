@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelManger : MonoBehaviour
@@ -21,6 +22,10 @@ public class LevelManger : MonoBehaviour
     void Start()
     {
         UIManager.instance.DisplayMovesLeft(numShadowMoves);
+        if (levelEndDialog.Count > 0)
+        {
+            DialogManager.instance.TriggerDialog(levelEnterDialog);
+        }
     }
 
     // Update is called once per frame
