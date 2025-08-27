@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     protected bool inDialog = false;
     protected int currentGridCell;
     protected Grid grid;
-    protected bool firstMoveCompleted = false;
+    protected bool levelCompleted = false;
     protected bool playerAlive = true;
     protected bool move;
 
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         EventsManager.instance.onDialogStarted.AddListener(StartDialogMode);
         EventsManager.instance.onDialogEnded.AddListener(EndDialogMode);
+        EventsManager.instance.onPlayerWin.AddListener(() => levelCompleted = true);
     }
 
     protected virtual void Start()
@@ -30,10 +31,12 @@ public class PlayerController : MonoBehaviour
     {
         EventsManager.instance.onDialogStarted.RemoveListener(StartDialogMode);
         EventsManager.instance.onDialogEnded.RemoveListener(EndDialogMode);
+        EventsManager.instance.onPlayerWin.RemoveListener(() => levelCompleted = false);
     }
 
     protected virtual void Update()
     {
+        if (levelCompleted) return;
         if (!playerAlive) return;
 
         currentGridCell = grid.GetValue(transform.position);
