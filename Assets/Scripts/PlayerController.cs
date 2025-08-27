@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     protected Grid grid;
     protected bool firstMoveCompleted = false;
     protected bool alive = true;
+    protected bool move;
 
     protected void Awake()
     {
@@ -36,11 +37,11 @@ public class PlayerController : MonoBehaviour
         if (!alive) return;
 
         currentGridCell = grid.GetValue(transform.position);
-        GameManager.instance.playerMoving = IsMovementInput();
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
         {
             if (inDialog) return;
+            GameManager.instance.playerMoving = IsMovementInput();
             GetNewPosition();
         }
 
@@ -112,12 +113,24 @@ public class PlayerController : MonoBehaviour
 
     protected virtual bool Left()
     {
-        return Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
+        move = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
+        if (move)
+        {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+            GetAnimator().TriggerDash();
+        }
+        return move;
     }
 
     protected virtual bool Right()
     {
-        return Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+        move = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+        if (move)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            GetAnimator().TriggerDash();
+        }
+        return move;
     }
 
     protected virtual bool Up()

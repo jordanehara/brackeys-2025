@@ -15,4 +15,9 @@ public class AnimatorController : MonoBehaviour
     {
         thisAnimator.SetTrigger("Die");
     }
+
+    public virtual void TriggerDash()
+    {
+        thisAnimator.SetTrigger("Horizontal");
+    }
 }

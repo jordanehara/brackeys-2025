@@ -33,7 +33,6 @@ public class LevelManger : MonoBehaviour
         EventsManager.instance.onPlayerWin.RemoveListener(StartLogDialog);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (shadowMoves.Count == numShadowMoves)

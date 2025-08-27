@@ -17,21 +17,19 @@ public class ShadowController : PlayerController
 
     protected override void Update()
     {
+        if (!alive) return;
         if (inDialog) return;
 
         currentGridCell = grid.GetValue(transform.position);
 
-        moveShadow = GameManager.instance.playerMoving;
-
         if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
         {
+            moveShadow = GameManager.instance.playerMoving;
             if (currentGridCell == 0 || moveShadow)
             {
-                if (inDialog) return;
                 GetNewPosition();
             }
         }
-
         MoveToNewTile();
     }
 
@@ -74,7 +72,7 @@ public class ShadowController : PlayerController
         if (collision.gameObject.name == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            EventsManager.instance.onPlayerLose.Invoke();
+            alive = false;
         }
     }
 }
