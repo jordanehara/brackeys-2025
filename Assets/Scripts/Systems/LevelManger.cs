@@ -21,7 +21,6 @@ public class LevelManger : MonoBehaviour
 
     void Start()
     {
-        UIManager.instance.DisplayMovesLeft(numShadowMoves);
         StartLevlEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
@@ -35,12 +34,18 @@ public class LevelManger : MonoBehaviour
 
     void Update()
     {
+        UIManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
         if (shadowMoves.Count == numShadowMoves)
         {
+            UIManager.instance.HideMovesLeftText();
             foreach (GameObject shadow in shadows)
             {
                 shadow.SetActive(true);
             }
+        }
+        else
+        {
+            UIManager.instance.DisplayMovesLeftText(numShadowMoves - shadowMoves.Count);
         }
     }
 

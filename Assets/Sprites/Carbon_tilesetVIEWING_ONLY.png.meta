@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 16fb9ba8e8f55c04b865fbdcb1e49637
+guid: 13bd4481ef209a2418d48320bd4077c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6632396099433619684
-    second: shadow_idle_0
+      213: -137852459210655528
+    second: Carbon_tilesetVIEWING_ONLY_0
   - first:
-      213: -7522862156101380419
-    second: shadow_idle_1
+      213: 2212871465178259697
+    second: Carbon_tilesetVIEWING_ONLY_1
   - first:
-      213: 6366630373964446424
-    second: shadow_idle_2
+      213: -3282217020135621924
+    second: Carbon_tilesetVIEWING_ONLY_2
   - first:
-      213: 4307242849418210663
-    second: shadow_idle_3
+      213: -4916449171666257967
+    second: Carbon_tilesetVIEWING_ONLY_3
+  - first:
+      213: 8912746448810154241
+    second: Carbon_tilesetVIEWING_ONLY_4
+  - first:
+      213: 3866510028324160163
+    second: Carbon_tilesetVIEWING_ONLY_5
+  - first:
+      213: 8938611660215821457
+    second: Carbon_tilesetVIEWING_ONLY_6
+  - first:
+      213: -4914436272896927800
+    second: Carbon_tilesetVIEWING_ONLY_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +75,7 @@ TextureImporter:
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -81,9 +93,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -122,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shadow_idle_0
+      name: Carbon_tilesetVIEWING_ONLY_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 14
-        height: 18
+        x: 19
+        y: 1119
+        width: 122
+        height: 161
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e06d6ccc110b0c50800000000000000
-      internalID: 6632396099433619684
+      spriteID: 8d8b5513bef361ef0800000000000000
+      internalID: -137852459210655528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow_idle_1
+      name: Carbon_tilesetVIEWING_ONLY_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 1
-        width: 14
-        height: 18
+        x: 159
+        y: 1109
+        width: 162
+        height: 171
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db619531abc699790800000000000000
-      internalID: -7522862156101380419
+      spriteID: 1f06c8f8fd2b5be10800000000000000
+      internalID: 2212871465178259697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow_idle_2
+      name: Carbon_tilesetVIEWING_ONLY_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 1
-        width: 14
-        height: 18
+        x: 339
+        y: 1129
+        width: 122
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8dafc50e790da5850800000000000000
-      internalID: 6366630373964446424
+      spriteID: cda331792093372d0800000000000000
+      internalID: -3282217020135621924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow_idle_3
+      name: Carbon_tilesetVIEWING_ONLY_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 1
-        width: 14
-        height: 18
+        x: 489
+        y: 1179
+        width: 142
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +215,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76de9e00d8666cb30800000000000000
-      internalID: 4307242849418210663
+      spriteID: 1d7b19ed68345cbb0800000000000000
+      internalID: -4916449171666257967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadow_idle_4
+      name: Carbon_tilesetVIEWING_ONLY_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 7
-        width: 12
+        x: 800
+        y: 1240
+        width: 160
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10914766caf60bb70800000000000000
+      internalID: 8912746448810154241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carbon_tilesetVIEWING_ONLY_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1120
+        width: 160
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a24fb6926a98a530800000000000000
+      internalID: 3866510028324160163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carbon_tilesetVIEWING_ONLY_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 959
+        width: 161
         height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194245832f35c0c70800000000000000
+      internalID: 8938611660215821457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carbon_tilesetVIEWING_ONLY_7
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 600
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c71fa26f3a6ccbb0800000000000000
+      internalID: -4914436272896927800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carbon_tilesetVIEWING_ONLY_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1120
+        width: 156
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,8 +325,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5fe3094d4d9f04684a045d1fb7b916
-      internalID: 2047270881
+      spriteID: 7fdda4739ff7497419b20a1502494ac1
+      internalID: 1967500479
       vertices: []
       indices: 
       edges: []
@@ -235,7 +335,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2edb2195e5b80444cb325b613d9409f6
+    spriteID: c2d15eda1a59af943b772d8d89965034
     internalID: 0
     vertices: []
     indices: 
@@ -245,11 +345,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      shadow_idle_0: 6632396099433619684
-      shadow_idle_1: -7522862156101380419
-      shadow_idle_2: 6366630373964446424
-      shadow_idle_3: 4307242849418210663
-      shadow_idle_4: 2047270881
+      Carbon_tilesetVIEWING_ONLY_0: -137852459210655528
+      Carbon_tilesetVIEWING_ONLY_1: 2212871465178259697
+      Carbon_tilesetVIEWING_ONLY_2: -3282217020135621924
+      Carbon_tilesetVIEWING_ONLY_3: -4916449171666257967
+      Carbon_tilesetVIEWING_ONLY_4: 8912746448810154241
+      Carbon_tilesetVIEWING_ONLY_5: 3866510028324160163
+      Carbon_tilesetVIEWING_ONLY_6: 8938611660215821457
+      Carbon_tilesetVIEWING_ONLY_7: -4914436272896927800
+      Carbon_tilesetVIEWING_ONLY_8: 1967500479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

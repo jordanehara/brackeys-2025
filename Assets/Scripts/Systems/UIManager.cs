@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject playerWinText;
     [SerializeField] TextMeshProUGUI movesList;
     [SerializeField] TextMeshProUGUI movesLeft;
+    [SerializeField] TextMeshProUGUI movesCounter;
     [SerializeField] TextMeshProUGUI biscuitsTracker;
 
     void Awake()
@@ -40,25 +41,35 @@ public class UIManager : MonoBehaviour
         movesList.text += "\n" + move;
     }
 
-    public void DisplayMovesLeft(int numMoves)
+    public void MoveCounter(int numMoves)
     {
-        movesLeft.text += numMoves.ToString();
+        movesCounter.text = numMoves.ToString();
+    }
+
+    public void DisplayMovesLeftText(int numMoves)
+    {
+        movesLeft.text = $"In {numMoves} move(s), your clone will follow your path to capture you";
+    }
+
+    public void HideMovesLeftText()
+    {
+        movesLeft.gameObject.SetActive(false);
     }
 
     public void ResetText()
     {
-        movesLeft.text = "Moves Left: ";
+        movesLeft.text = $"";
         movesList.text = "";
         DisplayBiscuitCount();
     }
 
     public void DisplayBiscuitCount()
     {
-        biscuitsTracker.text = $"Biscuits Found: {GameManager.instance.biscuitsCollected}/3";
+        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected}/3";
     }
 
     public void IncreaseBiscuitCount()
     {
-        biscuitsTracker.text = $"Biscuits Found: {GameManager.instance.biscuitsCollected + 1}/3";
+        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected + 1}/3";
     }
 }

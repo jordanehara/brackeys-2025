@@ -209,6 +209,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: mc_idle_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 7
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7772e9f261309b4fa73cce5aa406a94
+      internalID: 2073649594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -227,6 +249,7 @@ TextureImporter:
       mc_idle_1: 462556846552718712
       mc_idle_2: -4877933845174637732
       mc_idle_3: -9085676761441383571
+      mc_idle_4: 2073649594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
