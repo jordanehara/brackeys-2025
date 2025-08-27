@@ -36,12 +36,24 @@ public class ShadowController : PlayerController
     #region Shadow Direction
     protected override bool Left()
     {
-        return currentMove == "left";
+        move = currentMove == "left";
+        if (move)
+        {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+            GetAnimator().TriggerDash();
+        }
+        return move;
     }
 
     protected override bool Right()
     {
-        return currentMove == "right";
+        move = currentMove == "right";
+        if (move)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            GetAnimator().TriggerDash();
+        }
+        return move;
     }
 
     protected override bool Up()
