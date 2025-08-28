@@ -72,9 +72,14 @@ public class MoveTrackingManager : MonoBehaviour
         movesList.text = "";
         for (int i = 0; i < movesPanel.transform.childCount; i++)
         {
-            Destroy(movesPanel.transform.GetChild(i).gameObject);
+            Destroy(GetDirectionalTrackerObject(i));
         }
         currentMove = 0;
+    }
+
+    public GameObject GetDirectionalTrackerObject(int i)
+    {
+        return movesPanel.transform.GetChild(i).gameObject;
     }
 
     public void ShowMovesLeftText(int numMoves)

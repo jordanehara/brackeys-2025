@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShadowController : PlayerController
 {
@@ -76,7 +77,10 @@ public class ShadowController : PlayerController
         base.GetNewPosition();
 
         if (currentGridCell != 0)
+        {
+            MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, .1f);
             i++;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
