@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class DoorTile : MonoBehaviour
@@ -8,7 +9,7 @@ public class DoorTile : MonoBehaviour
     {
         if (open)
         {
-            GetComponent<SpriteRenderer>().color = Color.purple;
+            GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         }
         else
         {
