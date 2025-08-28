@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     protected bool inDialog = false;
     protected int currentGridCell;
     protected Grid grid;
-    protected bool levelCompleted = false;
     protected bool playerAlive = true;
     protected bool move;
 
@@ -18,25 +17,26 @@ public class PlayerController : MonoBehaviour
     {
         EventsManager.instance.onDialogStarted.AddListener(StartDialogMode);
         EventsManager.instance.onDialogEnded.AddListener(EndDialogMode);
-        EventsManager.instance.onPlayerWin.AddListener(() => levelCompleted = true);
     }
 
     protected virtual void Start()
     {
         grid = gridControl.GetComponent<GridController>().grid;
         movePoint.parent = null;
+
+        EventsManager.instance.onPlayerWin.AddListener(LevelManager.instance.SetLevelComplete);
     }
 
     protected void OnDestroy()
     {
         EventsManager.instance.onDialogStarted.RemoveListener(StartDialogMode);
         EventsManager.instance.onDialogEnded.RemoveListener(EndDialogMode);
-        EventsManager.instance.onPlayerWin.RemoveListener(() => levelCompleted = false);
+        EventsManager.instance.onPlayerWin.RemoveListener(LevelManager.instance.SetLevelComplete);
     }
 
     protected virtual void Update()
     {
-        if (levelCompleted) return;
+        if (LevelManager.instance.GetLevelComplete()) return;
         if (!playerAlive) return;
 
         currentGridCell = grid.GetValue(transform.position);
@@ -165,13 +165,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Left())
         {
-            LevelManger.instance.AddMove("left");
+            LevelManager.instance.AddMove("left");
             movePoint.position += new Vector3(-tileSize, 0, 0);
         }
 
         if (Right())
         {
-            LevelManger.instance.AddMove("right");
+            LevelManager.instance.AddMove("right");
             movePoint.position += new Vector3(tileSize, 0, 0);
         }
     }
@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Up())
         {
-            LevelManger.instance.AddMove("up");
+            LevelManager.instance.AddMove("up");
             grid.GetXY(transform.position, out int x, out int y);
             for (int i = y; i < grid.height - 1; i++)
             {
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Down())
         {
-            LevelManger.instance.AddMove("down");
+            LevelManager.instance.AddMove("down");
             grid.GetXY(transform.position, out int x, out int y);
             for (int i = y; i > -1; i--)
             {

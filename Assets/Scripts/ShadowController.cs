@@ -12,7 +12,7 @@ public class ShadowController : PlayerController
     {
         EventsManager.instance.onShadowSpawn.Invoke();
         base.Start();
-        moves = LevelManger.instance.GetShadowMoves();
+        moves = LevelManager.instance.GetShadowMoves();
     }
 
     protected override void Update()

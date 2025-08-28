@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,11 +75,22 @@ public class DialogManager : MonoBehaviour
     {
         dialogRunning = false;
         dialogBox.SetActive(false);
+        if (!LevelManager.instance.GetLevelComplete())
+        {
+            UIManager.instance.ShowMoveTracker();
+            UIManager.instance.ShowResetButton();
+        }
+        else
+        {
+            UIManager.instance.ShowContinueButton();
+        }
         EventsManager.instance.onDialogEnded.Invoke();
     }
 
     public IEnumerator TriggerDialog(List<DialogData> dialogData)
     {
+        UIManager.instance.HideMoveTracker();
+        UIManager.instance.HideResetButton();
         EventsManager.instance.onDialogStarted.Invoke();
         yield return new WaitForSecondsRealtime(2f);
         dialogBox.SetActive(true);

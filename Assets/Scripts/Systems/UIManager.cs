@@ -1,16 +1,15 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] GameObject playerWinText;
-    [SerializeField] TextMeshProUGUI movesList;
-    [SerializeField] TextMeshProUGUI movesLeft;
-    [SerializeField] TextMeshProUGUI movesCounter;
+    [SerializeField] GameObject continueButton;
+    [SerializeField] GameObject resetButton;
+    [SerializeField] GameObject directionPanel;
+
     [SerializeField] TextMeshProUGUI biscuitsTracker;
+
 
     void Awake()
     {
@@ -19,7 +18,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        DisplayBiscuitCount();
+        ShowBiscuitCount();
         EventsManager.instance.onPlayerWin.AddListener(PlayerWin);
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
@@ -30,40 +29,56 @@ public class UIManager : MonoBehaviour
         EventsManager.instance.onResetLevel.AddListener(ResetText);
     }
 
+    #region Show/Hide UI elements
+    public void ShowMoveTracker()
+    {
+        directionPanel.SetActive(true);
+    }
+
+    public void HideMoveTracker()
+    {
+        directionPanel.SetActive(false);
+    }
+
+    public void ShowContinueButton()
+    {
+        continueButton.SetActive(true);
+    }
+
+    public void HideContinueButton()
+    {
+        continueButton.SetActive(false);
+    }
+
+    public void ShowResetButton()
+    {
+        resetButton.SetActive(true);
+    }
+
+    public void HideResetButton()
+    {
+        resetButton.SetActive(false);
+    }
+
+    #endregion
+
     void PlayerWin()
     {
-        playerWinText.SetActive(true);
         GameManager.instance.biscuitsCollected++;
-    }
-
-    public void AppendMove(string move)
-    {
-        movesList.text += "\n" + move;
-    }
-
-    public void MoveCounter(int numMoves)
-    {
-        movesCounter.text = numMoves.ToString();
-    }
-
-    public void DisplayMovesLeftText(int numMoves)
-    {
-        movesLeft.text = $"In {numMoves} move(s), your clone will follow your path to capture you";
-    }
-
-    public void HideMovesLeftText()
-    {
-        movesLeft.gameObject.SetActive(false);
     }
 
     public void ResetText()
     {
-        movesLeft.text = $"";
-        movesList.text = "";
-        DisplayBiscuitCount();
+        MoveTracker().ResetMoves();
+        ShowBiscuitCount();
     }
 
-    public void DisplayBiscuitCount()
+    public MoveTrackingManager MoveTracker()
+    {
+        return GetComponentInChildren<MoveTrackingManager>();
+    }
+
+    public void ShowBiscuitCount()
     {
         biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected}/3";
     }

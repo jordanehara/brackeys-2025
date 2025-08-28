@@ -1,18 +1,22 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LevelManger : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    public static LevelManger instance;
+    public static LevelManager instance;
 
     [SerializeField] int numShadowMoves = 1;
     [SerializeField] List<GameObject> shadows = new List<GameObject>();
     [SerializeField] protected List<DialogData> levelEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> levelEndDialog = new List<DialogData>();
+    [SerializeField] protected GameObject directionalControlsPanel;
+    [SerializeField] protected GameObject directionalControl;
 
     private List<string> shadowMoves = new List<string>();
+    bool levelCompleted = false;
 
     void Awake()
     {
@@ -34,10 +38,10 @@ public class LevelManger : MonoBehaviour
 
     void Update()
     {
-        UIManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
+        MoveTrackingManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
         if (shadowMoves.Count == numShadowMoves)
         {
-            UIManager.instance.HideMovesLeftText();
+            MoveTrackingManager.instance.HideMovesLeftText();
             foreach (GameObject shadow in shadows)
             {
                 shadow.SetActive(true);
@@ -45,8 +49,18 @@ public class LevelManger : MonoBehaviour
         }
         else
         {
-            UIManager.instance.DisplayMovesLeftText(numShadowMoves - shadowMoves.Count);
+            MoveTrackingManager.instance.ShowMovesLeftText(numShadowMoves - shadowMoves.Count);
         }
+    }
+
+    public void SetLevelComplete()
+    {
+        levelCompleted = true;
+    }
+
+    public bool GetLevelComplete()
+    {
+        return levelCompleted;
     }
 
     #region Shadow movement
@@ -60,9 +74,10 @@ public class LevelManger : MonoBehaviour
         if (shadowMoves.Count < numShadowMoves)
         {
             shadowMoves.Add(move);
-            UIManager.instance.AppendMove(move);
+            UIManager.instance.MoveTracker().AppendMove(move);
         }
     }
+
     #endregion
 
     #region Dialog triggers
