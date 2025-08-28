@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 830287943063305099}
   - component: {fileID: 7405768226416374832}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ladder Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7137015835916557394}
   - component: {fileID: 3371896880767682274}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Platform Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
