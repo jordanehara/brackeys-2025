@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         currentGridCell = grid.GetValue(transform.position);
 
-        if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
+        if (ReachedDestination())
         {
             if (inDialog) return;
             GameManager.instance.playerMoving = IsMovementInput();
@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
 
         MoveToNewTile();
         CheckPlayerOutOfBounds();
+    }
+
+    public bool ReachedDestination()
+    {
+        return Vector3.Distance(transform.position, movePoint.position) <= 0f;
     }
 
     public virtual void GetNewPosition()

@@ -31,7 +31,7 @@ public class TeleportDoorTile : MonoBehaviour
     {
         if (open)
         {
-            collision.gameObject.transform.position = otherDoor.transform.position - new Vector3(0, .15f, 0);
+            collision.gameObject.transform.position = otherDoor.transform.position;
             collision.gameObject.GetComponent<PlayerController>().ResetMovePoint();
             EventsManager.instance.onPlayerTeleport.Invoke();
         }
