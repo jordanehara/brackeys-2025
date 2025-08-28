@@ -1,13 +1,11 @@
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    [SerializeField] int numShadowMoves = 1;
+    [SerializeField] public int numShadowMoves = 1;
     [SerializeField] List<GameObject> shadows = new List<GameObject>();
     [SerializeField] protected List<DialogData> levelEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
