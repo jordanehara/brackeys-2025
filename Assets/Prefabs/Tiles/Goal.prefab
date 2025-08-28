@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8448012353670458184}
   - component: {fileID: 9083616317036895926}
   m_Layer: 0
-  m_Name: Goal Sprite
+  m_Name: Door Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

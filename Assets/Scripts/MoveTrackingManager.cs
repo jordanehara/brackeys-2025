@@ -18,6 +18,13 @@ public class MoveTrackingManager : MonoBehaviour
     {
         movesList.text += "\n" + move;
         // add directional indicator
+        // float direction = 0f;
+        // switch (move)
+        // {
+        //     case "right":
+        //     GameObject.Instantiate(directionIndicator, )
+        //         break;
+        // }
     }
 
     public void MoveCounter(int numMoves)
