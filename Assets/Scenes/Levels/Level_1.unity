@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52985b1c4512bee4c9fac3a0363f004b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideGrid: 0
+  hideGrid: 1
   levelPieces:
   - {fileID: 1097194026}
   - {fileID: 2114713294}
@@ -1734,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 2107087411}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEndDialog.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEnterDialog.Array.size
@@ -1794,16 +1794,15 @@ PrefabInstance:
       objectReference: {fileID: 6785617442420483100, guid: bf308295dd488854f844a034e85a0bdb, type: 3}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEndDialog.Array.data[0].dialogText
-      value: 'She finally texted me back! '
+      value: credits in debt, no place to stay
       objectReference: {fileID: 0}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEndDialog.Array.data[1].dialogText
-      value: She told me that she was joining up with CargoCorp and asked me to apply
-        too!
+      value: "On top of all of that, I can\u2019t even get her to text me back..."
       objectReference: {fileID: 0}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEndDialog.Array.data[2].dialogText
-      value: Spending time together amonst the stars would be such a dream come true.
+      value: "I\u2019ve really screwed things up."
       objectReference: {fileID: 0}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEndDialog.Array.data[3].dialogText
