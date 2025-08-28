@@ -4,10 +4,11 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    [SerializeField] GameObject levelUIParent;
     [SerializeField] GameObject continueButton;
     [SerializeField] GameObject resetButton;
     [SerializeField] GameObject directionPanel;
-
     [SerializeField] TextMeshProUGUI biscuitsTracker;
 
 
@@ -30,6 +31,17 @@ public class UIManager : MonoBehaviour
     }
 
     #region Show/Hide UI elements
+    public void SetLevelUI()
+    {
+        levelUIParent.SetActive(true);
+        HideContinueButton();
+    }
+
+    public void HideLevelUI()
+    {
+        levelUIParent.SetActive(false);
+    }
+
     public void ShowMoveTracker()
     {
         directionPanel.SetActive(true);

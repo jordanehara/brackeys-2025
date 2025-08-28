@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        UIManager.instance.SetLevelUI();
         StartLevlEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
@@ -95,6 +96,7 @@ public class LevelManager : MonoBehaviour
 
     public void StartLogDialog()
     {
+        UIManager.instance.ResetText();
         if (levelEndDialog.Count > 0)
         {
             StartCoroutine(DialogManager.instance.TriggerDialog(levelEndDialog));
