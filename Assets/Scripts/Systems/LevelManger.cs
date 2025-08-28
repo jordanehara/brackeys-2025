@@ -12,8 +12,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] protected List<DialogData> levelEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> levelEndDialog = new List<DialogData>();
-    [SerializeField] protected GameObject directionalControlsPanel;
-    [SerializeField] protected GameObject directionalControl;
 
     private List<string> shadowMoves = new List<string>();
     bool levelCompleted = false;

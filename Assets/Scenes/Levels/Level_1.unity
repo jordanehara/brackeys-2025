@@ -1933,19 +1933,19 @@ PrefabInstance:
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEnterDialog.Array.data[0].portrait
       value: 
-      objectReference: {fileID: 2073649594, guid: 85929b398579f8546be780b805ca85ff, type: 3}
+      objectReference: {fileID: 1445448498886505147, guid: d0e243bd2879bb74a910da3eabdc21ed, type: 3}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEnterDialog.Array.data[1].portrait
       value: 
-      objectReference: {fileID: 2073649594, guid: 85929b398579f8546be780b805ca85ff, type: 3}
+      objectReference: {fileID: 1445448498886505147, guid: d0e243bd2879bb74a910da3eabdc21ed, type: 3}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEnterDialog.Array.data[2].portrait
       value: 
-      objectReference: {fileID: 2073649594, guid: 85929b398579f8546be780b805ca85ff, type: 3}
+      objectReference: {fileID: 1445448498886505147, guid: d0e243bd2879bb74a910da3eabdc21ed, type: 3}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: shadowEnterDialog.Array.data[0].portrait
       value: 
-      objectReference: {fileID: 2047270881, guid: 16fb9ba8e8f55c04b865fbdcb1e49637, type: 3}
+      objectReference: {fileID: -6291671846798690204, guid: d0250c23124f57d45becdbc7400a258c, type: 3}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: levelEnterDialog.Array.data[0].dialogText
       value: Some Autopilot...
