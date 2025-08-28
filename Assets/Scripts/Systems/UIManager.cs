@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject directionPanel;
     [SerializeField] TextMeshProUGUI biscuitsTracker;
 
+    public int currentBiscuits = 0;
 
     void Awake()
     {
@@ -76,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     void PlayerWin()
     {
-        GameManager.instance.biscuitsCollected++;
+        GameManager.instance.biscuitsCollected += currentBiscuits;
     }
 
     public void ResetText()
@@ -97,6 +98,7 @@ public class UIManager : MonoBehaviour
 
     public void IncreaseBiscuitCount()
     {
-        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected + 1}/3";
+        currentBiscuits++;
+        biscuitsTracker.text = $"{currentBiscuits}/3";
     }
 }

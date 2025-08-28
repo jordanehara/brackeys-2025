@@ -2,25 +2,33 @@ using UnityEngine;
 
 public class StartTile : MonoBehaviour
 {
+    Animator animator;
+
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     void Update()
     {
-        if (GetComponentInChildren<Animator>() != null && !AnimatorIsPlaying())
+        if (animator != null && !AnimatorIsPlaying())
         {
-            GetComponentInChildren<Animator>().gameObject.SetActive(false);
+            animator.gameObject.SetActive(false);
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name != "Shadow") return;
-        if (GetComponentInChildren<Animator>() == null) return;
-        GetComponentInChildren<Animator>().enabled = true;
-        GetComponentInChildren<Animator>().SetTrigger("Close");
+        if (animator == null) return;
+        animator.enabled = true;
+        animator.SetTrigger("Close");
+        GetComponent<Collider2D>().enabled = false;
     }
 
     bool AnimatorIsPlaying()
     {
-        return GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).length >
-               GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
+        return animator.GetCurrentAnimatorStateInfo(0).length >
+               animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 }

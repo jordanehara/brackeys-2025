@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     [SerializeField] public int numShadowMoves = 1;
+    [SerializeField] string answer;
     [SerializeField] List<GameObject> shadows = new List<GameObject>();
     [SerializeField] protected List<DialogData> levelEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
@@ -21,8 +23,10 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        UIManager.instance.currentBiscuits = 0;
+        Debug.Log(answer);
         UIManager.instance.SetLevelUI();
-        StartLevlEnterDialog();
+        StartLevelEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
     }
@@ -78,29 +82,38 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region Dialog triggers
-    public void StartLevlEnterDialog()
+
+    public void StartDialog(List<DialogData> dialog)
     {
-        if (levelEndDialog.Count > 0)
+        if (dialog.Count > 0)
         {
-            StartCoroutine(DialogManager.instance.TriggerDialog(levelEnterDialog));
+            StartCoroutine(DialogManager.instance.TriggerDialog(dialog));
         }
+        else
+        {
+            StartCoroutine(wait());
+        }
+    }
+
+    public IEnumerator wait()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+    }
+
+    public void StartLevelEnterDialog()
+    {
+        StartDialog(levelEnterDialog);
     }
 
     public void StartShadowEnterDialog()
     {
-        if (shadowEnterDialog.Count > 0)
-        {
-            StartCoroutine(DialogManager.instance.TriggerDialog(shadowEnterDialog));
-        }
+        StartDialog(shadowEnterDialog);
     }
 
     public void StartLogDialog()
     {
         UIManager.instance.ResetText();
-        if (levelEndDialog.Count > 0)
-        {
-            StartCoroutine(DialogManager.instance.TriggerDialog(levelEndDialog));
-        }
+        StartDialog(levelEndDialog);
     }
     #endregion
 }

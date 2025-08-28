@@ -4,6 +4,12 @@ using UnityEngine;
 public class DoorTile : MonoBehaviour
 {
     [SerializeField] public bool open;
+    Color originalColor;
+
+    void Awake()
+    {
+        originalColor = GetComponent<SpriteRenderer>().color;
+    }
 
     void Update()
     {
@@ -13,7 +19,7 @@ public class DoorTile : MonoBehaviour
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = Color.orange;
+            GetComponent<SpriteRenderer>().color = originalColor;
         }
     }
 }
