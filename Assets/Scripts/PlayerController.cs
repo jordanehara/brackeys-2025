@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     protected Grid grid;
     protected bool playerAlive = true;
     protected bool move;
+    Vector3 prevMovePoint;
 
     protected void Awake()
     {
@@ -52,13 +53,14 @@ public class PlayerController : MonoBehaviour
         CheckPlayerOutOfBounds();
     }
 
-    public bool ReachedDestination()
+    private bool ReachedDestination()
     {
         return Vector3.Distance(transform.position, movePoint.position) <= 0f;
     }
 
     public virtual void GetNewPosition()
     {
+        prevMovePoint = movePoint.transform.position;
         switch (currentGridCell)
         {
             case 0:
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
     protected bool IsMovementInput()
     {
-        return Left() || Right() || Up() || Down();
+        return (Left() || Right() || Up() || Down()) && (prevMovePoint != movePoint.transform.position);
     }
 
     protected virtual bool Left()
@@ -172,12 +174,14 @@ public class PlayerController : MonoBehaviour
         {
             LevelManager.instance.AddMove("left");
             movePoint.position += new Vector3(-tileSize, 0, 0);
+            GameManager.instance.playerMoving = true;
         }
 
         if (Right())
         {
             LevelManager.instance.AddMove("right");
             movePoint.position += new Vector3(tileSize, 0, 0);
+            GameManager.instance.playerMoving = true;
         }
     }
 
@@ -195,6 +199,7 @@ public class PlayerController : MonoBehaviour
                 }
                 movePoint.position += new Vector3(0, tileSize, 0);
             }
+            GameManager.instance.playerMoving = true;
         }
         else
         {
@@ -216,6 +221,7 @@ public class PlayerController : MonoBehaviour
                 }
                 movePoint.position += new Vector3(0, -tileSize, 0);
             }
+            GameManager.instance.playerMoving = true;
         }
         else
         {

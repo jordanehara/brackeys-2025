@@ -2544,6 +2544,7 @@ MonoBehaviour:
   resetButton: {fileID: 1649565741043146092}
   directionPanel: {fileID: 7841704349052651528}
   biscuitsTracker: {fileID: 359442485095513400}
+  currentBiscuits: 0
 --- !u!1 &7142217484132682094
 GameObject:
   m_ObjectHideFlags: 0

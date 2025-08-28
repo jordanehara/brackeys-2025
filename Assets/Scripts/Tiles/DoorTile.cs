@@ -6,7 +6,7 @@ public class DoorTile : MonoBehaviour
     [SerializeField] public bool open;
     Color originalColor;
 
-    void Awake()
+    void Start()
     {
         originalColor = GetComponent<SpriteRenderer>().color;
     }

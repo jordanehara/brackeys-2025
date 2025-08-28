@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52985b1c4512bee4c9fac3a0363f004b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideGrid: 0
+  hideGrid: 1
   levelPieces:
   - {fileID: 530400843}
   - {fileID: 692240018}
