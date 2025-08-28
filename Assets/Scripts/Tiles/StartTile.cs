@@ -12,11 +12,10 @@ public class StartTile : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (GetComponentInChildren<Animator>() != null)
-        {
-            GetComponentInChildren<Animator>().enabled = true;
-            GetComponentInChildren<Animator>().SetTrigger("Close");
-        }
+        if (collision.gameObject.name != "Shadow") return;
+        if (GetComponentInChildren<Animator>() == null) return;
+        GetComponentInChildren<Animator>().enabled = true;
+        GetComponentInChildren<Animator>().SetTrigger("Close");
     }
 
     bool AnimatorIsPlaying()
