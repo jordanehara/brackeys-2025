@@ -70,6 +70,11 @@ public class MoveTrackingManager : MonoBehaviour
     {
         movesLeft.text = $"";
         movesList.text = "";
+        for (int i = 0; i < movesPanel.transform.childCount; i++)
+        {
+            Destroy(movesPanel.transform.GetChild(i).gameObject);
+        }
+        currentMove = 0;
     }
 
     public void ShowMovesLeftText(int numMoves)
