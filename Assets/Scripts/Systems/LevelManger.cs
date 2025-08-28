@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
         if (shadowMoves.Count < numShadowMoves)
         {
             shadowMoves.Add(move);
-            UIManager.instance.MoveTracker().AppendMove(move);
+            UIManager.instance.MoveTracker().AddMove(move);
         }
     }
 

@@ -20,29 +20,33 @@ public class MoveTrackingManager : MonoBehaviour
         panel = movesPanel.GetComponent<RectTransform>().rect;
     }
 
-    public void AppendMove(string move)
+    public Quaternion GetRotation(string move)
     {
+        float rotation = 0f;
         switch (move)
         {
             case "right":
-                AddMove(0f);
                 break;
             case "left":
-                AddMove(180f);
+                rotation = 180f;
                 break;
             case "up":
-                AddMove(90f);
+                rotation = 90f;
                 break;
             case "down":
-                AddMove(270f);
+                rotation = 270f;
+                break;
+            default:
+                rotation = 0f;
                 break;
         }
+        return Quaternion.Euler(new Vector3(0, 0, rotation));
     }
 
-    public void AddMove(float rotation)
+    public void AddMove(string move)
     {
         // Rotate to the correct move inputs
-        directionIndicator.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotation));
+        directionIndicator.transform.rotation = GetRotation(move);
 
         // Make child object of panel
         GameObject newDirection = Instantiate(directionIndicator, movesPanel.transform);
@@ -52,7 +56,7 @@ public class MoveTrackingManager : MonoBehaviour
         currentMove++;
     }
 
-    public Vector3 GetDirectionIconPosition()
+    Vector3 GetDirectionIconPosition()
     {
         return movesPanel.transform.position + new Vector3(currentMove * panel.width / LevelManager.instance.numShadowMoves + panel.width / LevelManager.instance.numShadowMoves / 2, 0, 0);
     }
