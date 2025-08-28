@@ -92,7 +92,7 @@ public class DialogManager : MonoBehaviour
         UIManager.instance.HideMoveTracker();
         UIManager.instance.HideResetButton();
         EventsManager.instance.onDialogStarted.Invoke();
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         dialogBox.SetActive(true);
         dialogProgressionCount = 0;
 

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,5 +38,11 @@ public class SceneChanger : MonoBehaviour
     {
         EventsManager.instance.onResetLevel.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToNextLevel()
+    {
+        int level = int.Parse(SceneManager.GetActiveScene().name.Split('_').Last());
+        SceneManager.LoadScene("Level_" + (level + 1));
     }
 }
