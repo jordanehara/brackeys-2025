@@ -143,7 +143,7 @@ public class DialogManager : MonoBehaviour
         foreach (char letter in savedDialogData[dialogProgressionCount].dialogText)
         {
             dialogBodyText.text += letter;
-            AudioManager.instance.PlaySpeakingSound(0f, GetVoicePitch());
+            AudioManager.instance.PlaySpeakingSound(0.4f, GetVoicePitch());
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;

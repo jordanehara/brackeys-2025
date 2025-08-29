@@ -42,6 +42,7 @@ public class SceneChanger : MonoBehaviour
 
     public int GetLevelNumber()
     {
+        if (!SceneManager.GetActiveScene().name.Contains("Level")) return 0;
         return int.Parse(SceneManager.GetActiveScene().name.Split('_').Last());
     }
 

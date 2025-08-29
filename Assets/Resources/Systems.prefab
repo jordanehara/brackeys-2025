@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.59607846, g: 0.8862745, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.59607846, g: 0.8862745, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.59607846, g: 0.8862745, b: 0.57254905, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1783,7 +1783,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2383,10 +2383,9 @@ MonoBehaviour:
   - {fileID: 2972638590120596326}
   - {fileID: 3648438384673611956}
   - {fileID: 4704109711800642352}
-  menuMusic: {fileID: 0}
-  gameMusic1: {fileID: 0}
-  gameMusic2: {fileID: 0}
-  gameMusic3: {fileID: 0}
+  gameMusic1: {fileID: 8300000, guid: d221ee875180c324b85a3f52afdc8f39, type: 3}
+  gameMusic2: {fileID: 8300000, guid: 08d95badd79205146bbb6cc5ad412339, type: 3}
+  gameMusic3: {fileID: 8300000, guid: 713e4b18e9063c843aefdb51fcaa4aac, type: 3}
   speakingSFX: {fileID: 8300000, guid: 16f534d8f37842b4f90956ef24e0fc70, type: 3}
   hurtSFX: {fileID: 8300000, guid: a17e029d8d62e564298cdb6b85aada28, type: 3}
   clickSFX: {fileID: 8300000, guid: 792e0ec8f6162044c9d58d9cc76baac7, type: 3}
@@ -3153,7 +3152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8078432, g: 0.8313726, b: 0.9725491, a: 1}
+  m_Color: {r: 0.59607846, g: 0.8862745, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

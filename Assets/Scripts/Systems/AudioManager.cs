@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -13,7 +14,6 @@ public class AudioManager : MonoBehaviour
 
     // sound references
     [Space(10)]
-    [SerializeField] AudioClip menuMusic;
     [SerializeField] AudioClip gameMusic1;
     [SerializeField] AudioClip gameMusic2;
     [SerializeField] AudioClip gameMusic3;
@@ -35,6 +35,30 @@ public class AudioManager : MonoBehaviour
         highestSFXChannel = sfxChannels.Count - 1;
     }
 
+    void Update()
+    {
+        switch (SceneChanger.instance.GetLevelNumber())
+        {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                PlayMusic(gameMusic1, 0.05f);
+                break;
+            case 4:
+            case 5:
+            case 6:
+                PlayMusic(gameMusic2, 0.05f);
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                PlayMusic(gameMusic3, 0.1f);
+                break;
+        }
+    }
+
     #region Music
     void PlayMusic(AudioClip music, float volume)
     {
@@ -52,15 +76,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMenuMusic(float volume = 0)
-    {
-        PlayMusic(menuMusic, volume);
-    }
-
     public void PlayGameMusic(float volume = 0)
     {
         PlayMusic(gameMusic1, volume);
     }
+
     #endregion
 
     #region SFX
