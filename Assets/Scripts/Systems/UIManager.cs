@@ -93,12 +93,12 @@ public class UIManager : MonoBehaviour
 
     public void ShowBiscuitCount()
     {
-        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected}/3";
+        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected}";
     }
 
     public void IncreaseBiscuitCount()
     {
         currentBiscuits++;
-        biscuitsTracker.text = $"{currentBiscuits}/3";
+        biscuitsTracker.text = $"{currentBiscuits}";
     }
 }

@@ -82,7 +82,8 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            UIManager.instance.ShowContinueButton();
+            if (SceneChanger.instance.GetLevelNumber() != 10)
+                UIManager.instance.ShowContinueButton();
         }
         EventsManager.instance.onDialogEnded.Invoke();
     }

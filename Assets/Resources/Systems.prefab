@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSceneName: Menu
   creditsSceneName: Credits
-  gameSceneName: Level
+  gameSceneName: Level_1
 --- !u!1 &5558294588247463143
 GameObject:
   m_ObjectHideFlags: 0
