@@ -23,8 +23,8 @@ public class StartTile : MonoBehaviour
         if (animator == null) return;
         animator.enabled = true;
         AudioManager.instance.PlayDoorCloseSound();
-        animator.SetTrigger("Close");
-        GetComponent<Collider2D>().enabled = false;
+        // animator.SetTrigger("Close");
+        // GetComponent<Collider2D>().enabled = false;
     }
 
     bool AnimatorIsPlaying()

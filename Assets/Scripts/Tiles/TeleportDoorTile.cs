@@ -5,25 +5,16 @@ public class TeleportDoorTile : MonoBehaviour
     protected bool open = true;
     [SerializeField] GameObject otherDoor;
 
-    void Update()
-    {
-        if (open)
-        {
-            GetComponent<SpriteRenderer>().color = Color.magenta;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.brown;
-        }
-    }
-
     public void CloseDoor()
     {
+        GetComponentInChildren<Animator>().SetTrigger("Close");
         open = false;
     }
 
     public void OpenDoor()
     {
+        AudioManager.instance.PlayTeleportDoorOpenSound();
+        GetComponentInChildren<Animator>().SetTrigger("Open");
         open = true;
     }
 

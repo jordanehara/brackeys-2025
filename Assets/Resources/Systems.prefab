@@ -2401,6 +2401,7 @@ MonoBehaviour:
   teleportDogSFX: {fileID: 8300000, guid: 5a44235ad64505642b3a184765cde21e, type: 3}
   teleportButtonPushSFX: {fileID: 8300000, guid: 9286a590d65a32146af060faf364ca2d, type: 3}
   teleportButtonReleaseSFX: {fileID: 8300000, guid: 897b347e0cf257047856b7faf902603f, type: 3}
+  teleportDoorOpenSFX: {fileID: 8300000, guid: 6dd527a5562d92e49907bf76f706429e, type: 3}
 --- !u!1 &5846453234550525998
 GameObject:
   m_ObjectHideFlags: 0
