@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip startDoorCloseSFX;
     [SerializeField] AudioClip teleportSFX;
     [SerializeField] AudioClip teleportDogSFX;
+    [SerializeField] AudioClip teleportButtonPushSFX;
+    [SerializeField] AudioClip teleportButtonReleaseSFX;
 
     void Awake()
     {
@@ -137,7 +139,6 @@ public class AudioManager : MonoBehaviour
         PlaySoundEffect(buttonPushSFX, volume);
     }
 
-
     public void PlayButtonReleaseSound(float volume = 0)
     {
         PlaySoundEffect(buttonReleaseSFX, volume);
@@ -166,6 +167,16 @@ public class AudioManager : MonoBehaviour
     public void PlayTeleportDogSound(float volume = 0)
     {
         PlaySoundEffect(teleportDogSFX, volume);
+    }
+
+    public void PlayTeleportButtonPushSound(float volume = 0)
+    {
+        PlaySoundEffect(teleportButtonPushSFX, volume);
+    }
+
+    public void PlayTeleportButtonReleaseSound(float volume = 0)
+    {
+        PlaySoundEffect(teleportButtonReleaseSFX, volume);
     }
     #endregion
 }

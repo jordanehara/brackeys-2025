@@ -23,6 +23,7 @@ public class TeleportButtonTile : MonoBehaviour
         {
             door1.GetComponent<TeleportDoorTile>().OpenDoor();
             door2.GetComponent<TeleportDoorTile>().OpenDoor();
+            AudioManager.instance.PlayTeleportButtonPushSound();
             GetComponentInChildren<Animator>().SetTrigger("Push");
             doorsUsed = false;
         }
@@ -32,6 +33,7 @@ public class TeleportButtonTile : MonoBehaviour
     {
         door1.GetComponent<TeleportDoorTile>().CloseDoor();
         door2.GetComponent<TeleportDoorTile>().CloseDoor();
+        AudioManager.instance.PlayTeleportButtonReleaseSound();
         GetComponentInChildren<Animator>().SetTrigger("Unpush");
         doorsUsed = true;
     }
