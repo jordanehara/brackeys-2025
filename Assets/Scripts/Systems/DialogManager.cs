@@ -47,7 +47,7 @@ public class DialogManager : MonoBehaviour
     #region Utility
     bool ProgressDialogButtonPressed()
     {
-        return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E);
+        return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return);
     }
 
     bool IsDialogRunning()
