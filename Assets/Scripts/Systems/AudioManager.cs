@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     [Space(10)]
     [SerializeField] AudioClip speakingSFX;
     [SerializeField] AudioClip hurtSFX;
+    [SerializeField] AudioClip clickSFX;
 
     void Awake()
     {
@@ -97,6 +98,11 @@ public class AudioManager : MonoBehaviour
     public void PlayHurtSound(float volume = 0, float pitch = 1f)
     {
         PlaySoundEffect(hurtSFX, volume, pitch);
+    }
+
+    public void PlayClickSound(float volume = 0, float pitch = 1f)
+    {
+        PlaySoundEffect(clickSFX, volume, pitch);
     }
     #endregion
 }
