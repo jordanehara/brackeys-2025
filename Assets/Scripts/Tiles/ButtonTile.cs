@@ -7,6 +7,7 @@ public class ButtonTile : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.instance.PlayButtonPushSound();
         foreach (GameObject door in doors)
         {
             door.GetComponent<DoorTile>().open = !door.GetComponent<DoorTile>().open;
@@ -16,6 +17,7 @@ public class ButtonTile : MonoBehaviour
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
+        AudioManager.instance.PlayButtonReleaseSound();
         foreach (GameObject door in doors)
         {
             door.GetComponent<DoorTile>().open = !door.GetComponent<DoorTile>().open;

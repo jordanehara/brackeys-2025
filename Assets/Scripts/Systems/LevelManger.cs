@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         UIManager.instance.currentBiscuits = 0;
-        Debug.Log(answer);
+        // Debug.Log(answer);
         UIManager.instance.SetLevelUI();
         StartLevelEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);

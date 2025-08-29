@@ -31,6 +31,7 @@ public class TeleportDoorTile : MonoBehaviour
     {
         if (open)
         {
+            AudioManager.instance.PlayTeleportSound();
             collision.gameObject.transform.position = otherDoor.transform.position;
             collision.gameObject.GetComponent<PlayerController>().ResetMovePoint();
             EventsManager.instance.onPlayerTeleport.Invoke();

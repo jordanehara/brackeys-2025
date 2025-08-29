@@ -18,6 +18,7 @@ public class GoalTile : MonoBehaviour
 
     void OpenDoor()
     {
+        AudioManager.instance.PlayDoorOpenSound();
         GetComponentInChildren<Animator>().enabled = true;
     }
 }

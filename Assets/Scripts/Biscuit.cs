@@ -7,7 +7,7 @@ public class Biscuit : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("yummy");
+            AudioManager.instance.PlayBiscuitCollectSound();
             UIManager.instance.IncreaseBiscuitCount();
             Destroy(gameObject);
         }

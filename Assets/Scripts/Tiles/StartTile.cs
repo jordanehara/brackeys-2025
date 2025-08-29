@@ -22,6 +22,7 @@ public class StartTile : MonoBehaviour
         if (collision.gameObject.name != "Shadow") return;
         if (animator == null) return;
         animator.enabled = true;
+        AudioManager.instance.PlayDoorCloseSound();
         animator.SetTrigger("Close");
         GetComponent<Collider2D>().enabled = false;
     }

@@ -21,6 +21,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip speakingSFX;
     [SerializeField] AudioClip hurtSFX;
     [SerializeField] AudioClip clickSFX;
+    [SerializeField] AudioClip buttonPushSFX;
+    [SerializeField] AudioClip buttonReleaseSFX;
+    [SerializeField] AudioClip biscuitSFX;
+    [SerializeField] AudioClip goalDoorOpenSFX;
+    [SerializeField] AudioClip startDoorCloseSFX;
+    [SerializeField] AudioClip teleportSFX;
 
     void Awake()
     {
@@ -100,9 +106,40 @@ public class AudioManager : MonoBehaviour
         PlaySoundEffect(hurtSFX, volume, pitch);
     }
 
-    public void PlayClickSound(float volume = 0, float pitch = 1f)
+    public void PlayClickSound(float volume = 0)
     {
-        PlaySoundEffect(clickSFX, volume, pitch);
+        PlaySoundEffect(clickSFX, volume);
+    }
+
+    public void PlayButtonPushSound(float volume = 0)
+    {
+        PlaySoundEffect(buttonPushSFX, volume);
+    }
+
+
+    public void PlayButtonReleaseSound(float volume = 0)
+    {
+        PlaySoundEffect(buttonReleaseSFX, volume);
+    }
+
+    public void PlayBiscuitCollectSound(float volume = 0)
+    {
+        PlaySoundEffect(biscuitSFX, volume);
+    }
+
+    public void PlayDoorOpenSound(float volume = 0)
+    {
+        PlaySoundEffect(goalDoorOpenSFX, volume);
+    }
+
+    public void PlayDoorCloseSound(float volume = 0)
+    {
+        PlaySoundEffect(startDoorCloseSFX, volume);
+    }
+
+    public void PlayTeleportSound(float volume = 0)
+    {
+        PlaySoundEffect(teleportSFX, volume);
     }
     #endregion
 }

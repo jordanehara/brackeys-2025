@@ -569,6 +569,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 621362377185502863}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1893108886982600612
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +842,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: GoToNextLevel
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 621362377185502863}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2365,7 +2389,13 @@ MonoBehaviour:
   gameMusic3: {fileID: 0}
   speakingSFX: {fileID: 8300000, guid: 16f534d8f37842b4f90956ef24e0fc70, type: 3}
   hurtSFX: {fileID: 8300000, guid: a17e029d8d62e564298cdb6b85aada28, type: 3}
-  clickSFX: {fileID: 8300000, guid: 302a08316c8441f45a7dcfb9176b4622, type: 3}
+  clickSFX: {fileID: 8300000, guid: 792e0ec8f6162044c9d58d9cc76baac7, type: 3}
+  buttonPushSFX: {fileID: 8300000, guid: 51f6ff9ab759df74993da14f982cf7bf, type: 3}
+  buttonReleaseSFX: {fileID: 8300000, guid: e04b22f87b86d8c4893386769f8ffe30, type: 3}
+  biscuitSFX: {fileID: 8300000, guid: c9f4ac2d6e8d09f46a9e63fa2eb9dee0, type: 3}
+  goalDoorOpenSFX: {fileID: 8300000, guid: d36c182572885eb47ab10f97d852276e, type: 3}
+  startDoorCloseSFX: {fileID: 8300000, guid: a2eda58089387d3499888ceb47d01341, type: 3}
+  teleportSFX: {fileID: 8300000, guid: 62fead8cfc2cc814cacd9e72a0238f62, type: 3}
 --- !u!1 &5846453234550525998
 GameObject:
   m_ObjectHideFlags: 0
