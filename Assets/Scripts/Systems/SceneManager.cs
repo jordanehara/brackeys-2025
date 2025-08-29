@@ -48,6 +48,11 @@ public class SceneChanger : MonoBehaviour
     public void GoToNextLevel()
     {
         int level = GetLevelNumber();
-        SceneManager.LoadScene("Level_" + (level + 1));
+        if (GetLevelNumber() == 10)
+            LoadCreditsScene();
+        else
+        {
+            SceneManager.LoadScene("Level_" + (level + 1));
+        }
     }
 }
