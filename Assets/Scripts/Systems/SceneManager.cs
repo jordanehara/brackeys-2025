@@ -40,9 +40,14 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public int GetLevelNumber()
+    {
+        return int.Parse(SceneManager.GetActiveScene().name.Split('_').Last());
+    }
+
     public void GoToNextLevel()
     {
-        int level = int.Parse(SceneManager.GetActiveScene().name.Split('_').Last());
+        int level = GetLevelNumber();
         SceneManager.LoadScene("Level_" + (level + 1));
     }
 }

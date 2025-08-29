@@ -18,6 +18,7 @@ public class ShadowController : PlayerController
 
     protected override void Update()
     {
+        if (SceneChanger.instance.GetLevelNumber() == 10) return;
         if (!playerAlive) return;
         if (inDialog) return;
 
