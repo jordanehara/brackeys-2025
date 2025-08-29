@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c3ae8d86c478ef42bbf8816e7dfdfbc
-      internalID: 145941676
+      spriteID: 979ff988d7eecb74eb8e03445ec4eb81
+      internalID: 895755371
       vertices: []
       indices: 
       edges: []
@@ -172,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 756a342d683856f4d85f13d2261b014f
-      internalID: 317958358
+      spriteID: 5e384978d0761e74a91e591e6b75ade1
+      internalID: 623930072
       vertices: []
       indices: 
       edges: []
@@ -182,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9cc75d30a496a784b93fed24a6e83071
+    spriteID: 5937cd520d3941c4297a0fb139e02716
     internalID: 0
     vertices: []
     indices: 
@@ -195,8 +195,8 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       teleport_button_0: -1688526170862165714
-      teleport_button_1: 145941676
-      teleport_button_2: 317958358
+      teleport_button_1: 895755371
+      teleport_button_2: 623930072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

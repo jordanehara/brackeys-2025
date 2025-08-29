@@ -1,12 +1,11 @@
-
-
 using UnityEngine;
 
 public class TeleportButtonTile : MonoBehaviour
 {
-    [SerializeField] private GameObject door1;
-    [SerializeField] private GameObject door2;
-    private bool pushed = true; // doors start open
+    [SerializeField] GameObject door1;
+    [SerializeField] GameObject door2;
+    [SerializeField] SpriteRenderer button;
+    private bool doorsUsed = false; // doors start open
 
     void Start()
     {
@@ -18,25 +17,14 @@ public class TeleportButtonTile : MonoBehaviour
         EventsManager.instance.onPlayerTeleport.RemoveListener(CloseDoors);
     }
 
-    void Update()
-    {
-        if (pushed)
-        {
-            GetComponent<SpriteRenderer>().color = Color.lightBlue;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.chocolate;
-        }
-    }
-
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!pushed)
+        if (doorsUsed)
         {
             door1.GetComponent<TeleportDoorTile>().OpenDoor();
             door2.GetComponent<TeleportDoorTile>().OpenDoor();
-            pushed = true;
+            GetComponentInChildren<Animator>().SetTrigger("Push");
+            doorsUsed = false;
         }
     }
 
@@ -44,6 +32,7 @@ public class TeleportButtonTile : MonoBehaviour
     {
         door1.GetComponent<TeleportDoorTile>().CloseDoor();
         door2.GetComponent<TeleportDoorTile>().CloseDoor();
-        pushed = false;
+        GetComponentInChildren<Animator>().SetTrigger("Unpush");
+        doorsUsed = true;
     }
 }
