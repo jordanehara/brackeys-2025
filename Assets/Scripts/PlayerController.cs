@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerDeath()
     {
+        AudioManager.instance.PlayHurtSound();
         playerAlive = false;
         GetAnimator().TriggerDeath();
     }

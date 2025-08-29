@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip gameMusic;
     [Space(10)]
     [SerializeField] AudioClip speakingSFX;
+    [SerializeField] AudioClip hurtSFX;
 
     void Awake()
     {
@@ -74,7 +75,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayCustomSFX(AudioClip customSFX, float volume = 0, float pitch = 1f)
     {
-        PlaySoundEffect(customSFX, volume);
+        PlaySoundEffect(customSFX, volume, pitch);
     }
 
     void NextSFXChannel()
@@ -89,6 +90,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySpeakingSound(float volume = 0, float pitch = 1f)
     {
         PlaySoundEffect(speakingSFX, volume, pitch);
+    }
+
+    public void PlayHurtSound(float volume = 0, float pitch = 1f)
+    {
+        PlaySoundEffect(hurtSFX, volume, pitch);
     }
     #endregion
 }
