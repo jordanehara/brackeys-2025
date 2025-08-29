@@ -14,7 +14,9 @@ public class AudioManager : MonoBehaviour
     // sound references
     [Space(10)]
     [SerializeField] AudioClip menuMusic;
-    [SerializeField] AudioClip gameMusic;
+    [SerializeField] AudioClip gameMusic1;
+    [SerializeField] AudioClip gameMusic2;
+    [SerializeField] AudioClip gameMusic3;
     [Space(10)]
     [SerializeField] AudioClip speakingSFX;
     [SerializeField] AudioClip hurtSFX;
@@ -50,7 +52,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameMusic(float volume = 0)
     {
-        PlayMusic(gameMusic, volume);
+        PlayMusic(gameMusic1, volume);
     }
     #endregion
 
