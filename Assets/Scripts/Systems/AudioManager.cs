@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip goalDoorOpenSFX;
     [SerializeField] AudioClip startDoorCloseSFX;
     [SerializeField] AudioClip teleportSFX;
+    [SerializeField] AudioClip teleportDogSFX;
 
     void Awake()
     {
@@ -160,6 +161,11 @@ public class AudioManager : MonoBehaviour
     public void PlayTeleportSound(float volume = 0)
     {
         PlaySoundEffect(teleportSFX, volume);
+    }
+
+    public void PlayTeleportDogSound(float volume = 0)
+    {
+        PlaySoundEffect(teleportDogSFX, volume);
     }
     #endregion
 }

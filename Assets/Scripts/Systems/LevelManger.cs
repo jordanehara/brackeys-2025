@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -116,6 +117,7 @@ public class LevelManager : MonoBehaviour
 
     public void StartLogDialog()
     {
+        if (SceneChanger.instance.GetLevelNumber() == 10) { EventsManager.instance.onSpawnDog.Invoke(); }
         UIManager.instance.ResetText();
         StartDialog(levelEndDialog);
     }

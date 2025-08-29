@@ -1005,6 +1005,9 @@ MonoBehaviour:
   onShadowSpawn:
     m_PersistentCalls:
       m_Calls: []
+  onSpawnDog:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2462016116383469070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2398,7 @@ MonoBehaviour:
   goalDoorOpenSFX: {fileID: 8300000, guid: d36c182572885eb47ab10f97d852276e, type: 3}
   startDoorCloseSFX: {fileID: 8300000, guid: a2eda58089387d3499888ceb47d01341, type: 3}
   teleportSFX: {fileID: 8300000, guid: 62fead8cfc2cc814cacd9e72a0238f62, type: 3}
+  teleportDogSFX: {fileID: 8300000, guid: 5a44235ad64505642b3a184765cde21e, type: 3}
 --- !u!1 &5846453234550525998
 GameObject:
   m_ObjectHideFlags: 0

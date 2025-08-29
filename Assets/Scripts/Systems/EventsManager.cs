@@ -13,6 +13,7 @@ public class EventsManager : MonoBehaviour
     public UnityEvent onDialogEnded;
     public UnityEvent onDialogStarted;
     public UnityEvent onShadowSpawn;
+    public UnityEvent onSpawnDog;
 
     void Awake()
     {
