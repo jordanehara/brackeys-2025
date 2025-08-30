@@ -183,15 +183,16 @@ public class PlayerController : MonoBehaviour
     {
         if (Up())
         {
-            int numLadders = 1;
+            int numLadders = 0;
             LevelManager.instance.AddMove("up");
             grid.GetXY(transform.position, out int x, out int y);
             for (int i = y; i < grid.height - 1; i++)
             {
                 if (grid.GetValue(x, i) == 3) // top ladder found
                 {
-                    numLadders++;
+                    break;
                 }
+                numLadders++;
             }
             movePoint.position += new Vector3(0, tileSize * numLadders, 0);
             GameManager.instance.playerStartMove = true;

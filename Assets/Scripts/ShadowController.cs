@@ -7,7 +7,6 @@ public class ShadowController : PlayerController
     public List<string> moves = new List<string>();
     private string currentMove;
     private int i = 0;
-    private bool moveShadow = false;
 
     protected override void Start()
     {
@@ -71,7 +70,6 @@ public class ShadowController : PlayerController
 
     public override void GetNewPosition()
     {
-        moveShadow = false;
         currentMove = moves[i];
 
         base.GetNewPosition();
