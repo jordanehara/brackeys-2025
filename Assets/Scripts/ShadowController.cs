@@ -59,11 +59,13 @@ public class ShadowController : PlayerController
 
     protected override bool Up()
     {
+        GetAnimator().TriggerAscend();
         return currentMove == "up";
     }
 
     protected override bool Down()
     {
+        GetAnimator().TriggerDescend();
         return currentMove == "down";
     }
     #endregion
