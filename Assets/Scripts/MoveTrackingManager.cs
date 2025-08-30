@@ -70,7 +70,6 @@ public class MoveTrackingManager : MonoBehaviour
     public void ResetMoves()
     {
         movesLeft.text = $"";
-        movesList.text = "";
         for (int i = 0; i < movesPanel.transform.childCount; i++)
         {
             Destroy(GetDirectionalTrackerObject(i));

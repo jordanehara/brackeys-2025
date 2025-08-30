@@ -13,4 +13,9 @@ public class MenuButton : MonoBehaviour
         AudioManager.instance.PlayClickSound();
         SceneChanger.instance.LoadGameScene();
     }
+
+    public void LoadFirstLevel()
+    {
+        SceneChanger.instance.GoToNextLevel();
+    }
 }

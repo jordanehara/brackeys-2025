@@ -40,7 +40,8 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) Reload();
-        MoveTrackingManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
+        if (MoveTrackingManager.instance != null)
+            MoveTrackingManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
         if (shadowMoves.Count == numShadowMoves)
         {
             MoveTrackingManager.instance.HideMovesLeftText();
@@ -51,7 +52,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            MoveTrackingManager.instance.ShowMovesLeftText(numShadowMoves - shadowMoves.Count);
+            if (MoveTrackingManager.instance != null)
+                MoveTrackingManager.instance.ShowMovesLeftText(numShadowMoves - shadowMoves.Count);
         }
     }
 
