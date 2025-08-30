@@ -59,7 +59,8 @@ public class MoveTrackingManager : MonoBehaviour
 
     Vector3 GetDirectionIconPosition()
     {
-        return movesPanel.transform.position + new Vector3(currentMove * panel.width / LevelManager.instance.numShadowMoves + panel.width / LevelManager.instance.numShadowMoves / 2, 0, 0);
+        return movesPanel.transform.position +
+            new Vector3(currentMove * panel.width / LevelManager.instance.numShadowMoves + panel.width / LevelManager.instance.numShadowMoves / 2, 0, 0);
     }
 
     public void MoveCounter(int numMoves)
