@@ -46,9 +46,11 @@ public class PlayerController : MonoBehaviour
 
         if (ReachedDestination())
         {
-            if (inDialog) return;
-            if (Input.GetKeyDown(KeyCode.R)) SceneChanger.instance.ReloadScene();
-            GetNewPosition();
+            if (!inDialog || currentGridCell == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.R)) SceneChanger.instance.ReloadScene();
+                GetNewPosition();
+            }
         }
 
         MoveToNewTile();

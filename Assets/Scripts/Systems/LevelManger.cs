@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -30,10 +29,6 @@ public class LevelManager : MonoBehaviour
             StartLevelEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
-        if (SceneChanger.instance.GetLevelNumber() == 10)
-        {
-            UIManager.instance.HideMoveTracker();
-        }
     }
 
     void OnDestroy()
