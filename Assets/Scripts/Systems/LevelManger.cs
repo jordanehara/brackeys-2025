@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
 
     void Reload()
     {
-        if (!DialogManager.instance.dialogRunning)
+        if (!DialogManager.instance.dialogRunning && !levelCompleted)
             SceneChanger.instance.ReloadScene();
     }
 
