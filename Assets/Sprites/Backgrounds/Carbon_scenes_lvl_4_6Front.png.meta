@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 3f27fce797dbba9478413f880ebe67ad
+guid: 314e635833f5b724586e60e8cf28a008
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6939917950698818664
-    second: DRAFT_starting_scene_0
+      213: 3446654983846899063
+    second: Carbon_scenes_lvl_4_6Front_0
+  - first:
+      213: -8150442813770891755
+    second: Carbon_scenes_lvl_4_6Front_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DRAFT_starting_scene_0
+      name: Carbon_scenes_lvl_4_6Front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1468
-        height: 810
+        width: 4800
+        height: 2700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8937d32a46570bf90800000000000000
-      internalID: -6939917950698818664
+      spriteID: 77d2687527af4df20800000000000000
+      internalID: 3446654983846899063
       vertices: []
       indices: 
       edges: []
@@ -138,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6fcd3712aa03e6f4ea0c7fc35bef2e37
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +151,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DRAFT_starting_scene_0: -6939917950698818664
+      Carbon_scenes_lvl_4_6Front_0: 3446654983846899063
+      Carbon_scenes_lvl_4_6Front_1: -8150442813770891755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
