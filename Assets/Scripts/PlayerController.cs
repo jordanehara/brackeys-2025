@@ -183,7 +183,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Up())
         {
-            int numLadders = 0;
             LevelManager.instance.AddMove("up");
             grid.GetXY(transform.position, out int x, out int y);
             for (int i = y; i < grid.height - 1; i++)
@@ -192,10 +191,10 @@ public class PlayerController : MonoBehaviour
                 {
                     break;
                 }
-                numLadders++;
+                movePoint.position += new Vector3(0, tileSize, 0);
             }
-            movePoint.position += new Vector3(0, tileSize * numLadders, 0);
             GameManager.instance.playerStartMove = true;
+            GetAnimator().TriggerAscend();
         }
         else
         {
@@ -218,6 +217,7 @@ public class PlayerController : MonoBehaviour
                 movePoint.position += new Vector3(0, -tileSize, 0);
             }
             GameManager.instance.playerStartMove = true;
+            GetAnimator().TriggerDescend();
         }
         else
         {

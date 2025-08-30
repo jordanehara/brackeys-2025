@@ -14,7 +14,6 @@ public class DialogManager : MonoBehaviour
     [SerializeField] Image dialogPortrait;
     [SerializeField] AudioClip voidSound;
     [SerializeField] float typingSpeed = 0.01f;
-    [SerializeField] float voicePitch = 1f;
 
     List<DialogData> savedDialogData = new List<DialogData>();
     bool dialogRunning = false;
@@ -22,7 +21,6 @@ public class DialogManager : MonoBehaviour
     int dialogProgressionCount = 0;
     bool isTyping;
     Coroutine typeLine;
-
 
     void Awake()
     {

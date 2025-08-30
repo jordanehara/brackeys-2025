@@ -19,7 +19,6 @@ public class ShadowController : PlayerController
     {
         if (SceneChanger.instance.GetLevelNumber() == 10) return;
         if (!playerAlive) return;
-        if (i == moves.Count) return;
         if (inDialog) return;
 
         currentGridCell = grid.GetValue(transform.position);
@@ -31,6 +30,7 @@ public class ShadowController : PlayerController
                 GetNewPosition();
             }
         }
+
         MoveToNewTile();
     }
 
@@ -70,14 +70,20 @@ public class ShadowController : PlayerController
 
     public override void GetNewPosition()
     {
-        currentMove = moves[i];
-
-        base.GetNewPosition();
-
-        if (currentGridCell != 0)
+        if (i != moves.Count)
         {
-            MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, .1f);
-            i++;
+            currentMove = moves[i];
+            base.GetNewPosition();
+
+            if (currentGridCell != 0)
+            {
+                MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, .1f);
+                i++;
+            }
+        }
+        else if (currentGridCell == 0)
+        {
+            NoTile();
         }
     }
 

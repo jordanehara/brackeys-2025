@@ -20,4 +20,14 @@ public class AnimatorController : MonoBehaviour
     {
         thisAnimator.SetTrigger("Horizontal");
     }
+
+    public virtual void TriggerAscend()
+    {
+        thisAnimator.SetTrigger("StartAscend");
+    }
+
+    public virtual void TriggerDescend()
+    {
+        thisAnimator.SetTrigger("StartDescend");
+    }
 }
