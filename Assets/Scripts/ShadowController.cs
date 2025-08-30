@@ -20,14 +20,14 @@ public class ShadowController : PlayerController
     {
         if (SceneChanger.instance.GetLevelNumber() == 10) return;
         if (!playerAlive) return;
+        if (i == moves.Count) return;
         if (inDialog) return;
 
         currentGridCell = grid.GetValue(transform.position);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
         {
-            moveShadow = GameManager.instance.playerMoving;
-            if (currentGridCell == 0 || moveShadow)
+            if (currentGridCell == 0 || GameManager.instance.playerStartMove)
             {
                 GetNewPosition();
             }
@@ -71,8 +71,7 @@ public class ShadowController : PlayerController
 
     public override void GetNewPosition()
     {
-        if (i == moves.Count) return;
-
+        moveShadow = false;
         currentMove = moves[i];
 
         base.GetNewPosition();

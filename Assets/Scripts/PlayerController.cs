@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     protected Grid grid;
     protected bool playerAlive = true;
     protected bool move;
-    Vector3 prevMovePoint;
 
     protected void Awake()
     {
@@ -41,11 +40,11 @@ public class PlayerController : MonoBehaviour
         if (!playerAlive) return;
 
         currentGridCell = grid.GetValue(transform.position);
+        GameManager.instance.playerStartMove = false;
 
         if (ReachedDestination())
         {
             if (inDialog) return;
-            GameManager.instance.playerMoving = IsMovementInput();
             GetNewPosition();
         }
 
@@ -60,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
     public virtual void GetNewPosition()
     {
-        prevMovePoint = movePoint.transform.position;
         switch (currentGridCell)
         {
             case 0:
@@ -117,11 +115,6 @@ public class PlayerController : MonoBehaviour
         movePoint.position = transform.position;
     }
 
-    protected bool IsMovementInput()
-    {
-        return (Left() || Right() || Up() || Down()) && (prevMovePoint != movePoint.transform.position);
-    }
-
     protected virtual bool Left()
     {
         move = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
@@ -175,14 +168,14 @@ public class PlayerController : MonoBehaviour
         {
             LevelManager.instance.AddMove("left");
             movePoint.position += new Vector3(-tileSize, 0, 0);
-            GameManager.instance.playerMoving = true;
+            GameManager.instance.playerStartMove = true;
         }
 
         if (Right())
         {
             LevelManager.instance.AddMove("right");
             movePoint.position += new Vector3(tileSize, 0, 0);
-            GameManager.instance.playerMoving = true;
+            GameManager.instance.playerStartMove = true;
         }
     }
 
@@ -190,17 +183,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Up())
         {
+            int numLadders = 1;
             LevelManager.instance.AddMove("up");
             grid.GetXY(transform.position, out int x, out int y);
             for (int i = y; i < grid.height - 1; i++)
             {
                 if (grid.GetValue(x, i) == 3) // top ladder found
                 {
-                    break;
+                    numLadders++;
                 }
-                movePoint.position += new Vector3(0, tileSize, 0);
             }
-            GameManager.instance.playerMoving = true;
+            movePoint.position += new Vector3(0, tileSize * numLadders, 0);
+            GameManager.instance.playerStartMove = true;
         }
         else
         {
@@ -222,7 +216,7 @@ public class PlayerController : MonoBehaviour
                 }
                 movePoint.position += new Vector3(0, -tileSize, 0);
             }
-            GameManager.instance.playerMoving = true;
+            GameManager.instance.playerStartMove = true;
         }
         else
         {

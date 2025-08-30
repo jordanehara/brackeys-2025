@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool playerMoving = false;
+    public bool playerStartMove = false;
     public int biscuitsCollected = 0;
 
     private void Awake()
