@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
@@ -29,5 +30,11 @@ public class AnimatorController : MonoBehaviour
     public virtual void TriggerDescend()
     {
         thisAnimator.SetTrigger("StartDescend");
+    }
+
+    public IEnumerator WaitToReload(float additionalTime = 0)
+    {
+        yield return new WaitForSeconds(thisAnimator.GetCurrentAnimatorStateInfo(0).length + additionalTime);
+        SceneChanger.instance.ReloadScene();
     }
 }

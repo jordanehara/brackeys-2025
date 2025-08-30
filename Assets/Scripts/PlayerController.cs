@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         if (ReachedDestination())
         {
             if (inDialog) return;
+            if (Input.GetKeyDown(KeyCode.R)) SceneChanger.instance.ReloadScene();
             GetNewPosition();
         }
 

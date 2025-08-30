@@ -92,6 +92,7 @@ public class ShadowController : PlayerController
         if (collision.gameObject.name == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
+            StartCoroutine(collision.gameObject.GetComponent<AnimatorController>().WaitToReload(2f));
             playerAlive = false;
         }
     }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public bool playerStartMove = false;
     public int biscuitsCollected = 0;
+    public bool introDialogPlayed = false;
 
     private void Awake()
     {

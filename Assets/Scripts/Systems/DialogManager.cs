@@ -16,7 +16,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] float typingSpeed = 0.01f;
 
     List<DialogData> savedDialogData = new List<DialogData>();
-    bool dialogRunning = false;
+    public bool dialogRunning = false;
     bool dialogProgressedThisFrame = false;
     int dialogProgressionCount = 0;
     bool isTyping;
@@ -45,7 +45,7 @@ public class DialogManager : MonoBehaviour
     #region Utility
     bool ProgressDialogButtonPressed()
     {
-        return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return);
+        return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space);
     }
 
     bool IsDialogRunning()

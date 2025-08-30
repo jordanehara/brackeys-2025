@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] protected List<DialogData> shadowEnterDialog = new List<DialogData>();
     [SerializeField] protected List<DialogData> levelEndDialog = new List<DialogData>();
 
-    private List<string> shadowMoves = new List<string>();
+    List<string> shadowMoves = new List<string>();
     bool levelCompleted = false;
 
     void Awake()
@@ -25,9 +25,9 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         UIManager.instance.currentBiscuits = 0;
-        // Debug.Log(answer);
         UIManager.instance.SetLevelUI();
-        StartLevelEnterDialog();
+        if (!GameManager.instance.introDialogPlayed)
+            StartLevelEnterDialog();
         EventsManager.instance.onShadowSpawn.AddListener(StartShadowEnterDialog);
         EventsManager.instance.onPlayerWin.AddListener(StartLogDialog);
         if (SceneChanger.instance.GetLevelNumber() == 10)
@@ -44,6 +44,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R)) Reload();
         MoveTrackingManager.instance.MoveCounter(numShadowMoves - shadowMoves.Count);
         if (shadowMoves.Count == numShadowMoves)
         {
@@ -57,6 +58,12 @@ public class LevelManager : MonoBehaviour
         {
             MoveTrackingManager.instance.ShowMovesLeftText(numShadowMoves - shadowMoves.Count);
         }
+    }
+
+    void Reload()
+    {
+        if (!DialogManager.instance.dialogRunning)
+            SceneChanger.instance.ReloadScene();
     }
 
     public void SetLevelComplete()
@@ -108,6 +115,7 @@ public class LevelManager : MonoBehaviour
     public void StartLevelEnterDialog()
     {
         StartDialog(levelEnterDialog);
+        GameManager.instance.introDialogPlayed = true;
     }
 
     public void StartShadowEnterDialog()
@@ -117,6 +125,7 @@ public class LevelManager : MonoBehaviour
 
     public void StartLogDialog()
     {
+        GameManager.instance.introDialogPlayed = false;
         if (SceneChanger.instance.GetLevelNumber() == 10) { EventsManager.instance.onSpawnDog.Invoke(); }
         UIManager.instance.ResetText();
         StartDialog(levelEndDialog);
