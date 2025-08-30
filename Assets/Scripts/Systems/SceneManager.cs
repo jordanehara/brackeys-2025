@@ -31,7 +31,7 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene("Level_0");
     }
 
     public void ReloadScene()

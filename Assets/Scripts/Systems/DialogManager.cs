@@ -25,6 +25,7 @@ public class DialogManager : MonoBehaviour
     void Awake()
     {
         if (instance == null) instance = this;
+        Debug.Log("bro");
     }
 
     void Start()
@@ -73,7 +74,7 @@ public class DialogManager : MonoBehaviour
     {
         dialogRunning = false;
         dialogBox.SetActive(false);
-        if (!LevelManager.instance.GetLevelComplete())
+        if (LevelManager.instance != null && !LevelManager.instance.GetLevelComplete())
         {
             UIManager.instance.ShowMoveTracker();
             UIManager.instance.ShowResetButton();
