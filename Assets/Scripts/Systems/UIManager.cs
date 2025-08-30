@@ -100,6 +100,6 @@ public class UIManager : MonoBehaviour
     public void IncreaseBiscuitCount()
     {
         currentBiscuits++;
-        biscuitsTracker.text = $"{currentBiscuits}";
+        biscuitsTracker.text = $"{GameManager.instance.biscuitsCollected + currentBiscuits}";
     }
 }
