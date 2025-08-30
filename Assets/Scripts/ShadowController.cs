@@ -25,6 +25,12 @@ public class ShadowController : PlayerController
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0f)
         {
+            if (i != moves.Count)
+            {
+                var arrowSprite = MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0);
+                arrowSprite.GetComponent<Animator>().enabled = true;
+            }
+
             if (currentGridCell == 0 || GameManager.instance.playerStartMove)
             {
                 GetNewPosition();
@@ -79,7 +85,10 @@ public class ShadowController : PlayerController
 
             if (currentGridCell != 0)
             {
-                MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, .1f);
+                var arrowSprite = MoveTrackingManager.instance.GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0);
+                arrowSprite.GetComponent<Animator>().enabled = false;
+                MoveTrackingManager.instance.ResetImage(i);
+                arrowSprite.GetComponent<Image>().color = new Color(1, 1, 1, .1f);
                 i++;
             }
         }

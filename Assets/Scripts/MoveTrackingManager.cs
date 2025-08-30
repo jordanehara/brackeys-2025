@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class MoveTrackingManager : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class MoveTrackingManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI movesLeft;
     [SerializeField] TextMeshProUGUI movesCounter;
     [SerializeField] GameObject movesPanel;
+    [SerializeField] Sprite baseImage;
     int currentMove = 0;
     Rect panel;
 
@@ -80,6 +81,11 @@ public class MoveTrackingManager : MonoBehaviour
     public GameObject GetDirectionalTrackerObject(int i)
     {
         return movesPanel.transform.GetChild(i).gameObject;
+    }
+
+    public void ResetImage(int i)
+    {
+        GetDirectionalTrackerObject(i).gameObject.transform.GetChild(0).GetComponent<Image>().sprite = baseImage;
     }
 
     public void ShowMovesLeftText(int numMoves)

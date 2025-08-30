@@ -1394,7 +1394,7 @@ MonoBehaviour:
   dialogPortrait: {fileID: 9134038671027115146}
   voidSound: {fileID: 8300000, guid: 16f534d8f37842b4f90956ef24e0fc70, type: 3}
   typingSpeed: 0.05
-  voicePitch: 1
+  dialogRunning: 0
 --- !u!1 &3670882536745026565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,8 +2974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8e84edeb8ac424489504da743e4cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoving: 0
+  playerStartMove: 0
   biscuitsCollected: 0
+  introDialogPlayed: 0
 --- !u!1 &7696061366257897324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,6 +3194,7 @@ MonoBehaviour:
   movesLeft: {fileID: 4229182279287405939}
   movesCounter: {fileID: 8215710150377030537}
   movesPanel: {fileID: 1616804455799239461}
+  baseImage: {fileID: -1248913744285110062, guid: c91a23c417ac2974eb160e6c26b88317, type: 3}
 --- !u!1 &8350312696010942488
 GameObject:
   m_ObjectHideFlags: 0
