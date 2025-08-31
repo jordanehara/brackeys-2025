@@ -46,18 +46,18 @@ public class AudioManager : MonoBehaviour
             case 1:
             case 2:
             case 3:
-                PlayMusic(gameMusic1, 0.12f);
+                PlayMusic(gameMusic1, 0.05f);
                 break;
             case 4:
             case 5:
             case 6:
-                PlayMusic(gameMusic3, 0.17f);
+                PlayMusic(gameMusic3, 0.1f);
                 break;
             case 7:
             case 8:
             case 9:
             case 10:
-                PlayMusic(gameMusic2, 0.12f);
+                PlayMusic(gameMusic2, 0.05f);
                 break;
         }
     }

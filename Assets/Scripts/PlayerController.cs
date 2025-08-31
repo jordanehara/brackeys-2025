@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     protected void CheckPlayerOutOfBounds()
     {
-        if (currentGridCell == -1) // fell off the grid
+        if (currentGridCell == -1 && !inDialog) // fell off the grid
         {
             SceneChanger.instance.ReloadScene();
         }

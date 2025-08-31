@@ -731,6 +731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Levels 4-6 lighting
       objectReference: {fileID: 0}
+    - target: {fileID: 5254712863447691699, guid: ca27efbf06aeb744a91c79ae01cfc213, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7702502175189885617, guid: ca27efbf06aeb744a91c79ae01cfc213, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.92

@@ -819,6 +819,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6949730326089282682, guid: b0087ac8074c5654f899d389ce92d3c8, type: 3}
   m_PrefabInstance: {fileID: 896656727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &906462785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6743913933363468031, guid: a6bb2adb5d1e61b4d8a8f49cf3ecc088, type: 3}
+  m_PrefabInstance: {fileID: 1210223132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &952154297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1838,6 +1843,10 @@ PrefabInstance:
       propertyPath: answer
       value: RLLRDRR
       objectReference: {fileID: 0}
+    - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 906462785}
     - target: {fileID: 8674630048280759671, guid: b40b4aac928d9f946ba1f12c2759d14a, type: 3}
       propertyPath: numShadowMoves
       value: 7
